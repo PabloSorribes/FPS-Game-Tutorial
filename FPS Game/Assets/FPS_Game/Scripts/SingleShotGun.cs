@@ -16,6 +16,8 @@ public class SingleShotGun : Gun
 
 	PhotonView PV;
 
+
+    bool isServer = false;
 	void Awake()
 	{
 		PV = GetComponent<PhotonView>();
@@ -23,35 +25,59 @@ public class SingleShotGun : Gun
 		snapshotEmitter.Play();
 	}
 
-	public override void Use()
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            isServer = true;
+            Debug.Log("tremolo 1.");
+           // snapshotEmitter.SetParameter("TremoloParam", 1f);
+
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            isServer = false;
+            Debug.Log("tremolo 0");
+           // snapshotEmitter.SetParameter("TremoloParam", 0f);
+        }
+    }
+
+    public override void Use()
 	{
 		Shoot();
-	}
+    }
 
 	void Shoot()
 	{
-		snapshotEmitter.SetParameter("TremoloParam", 1f);
-		FMODUnity.RuntimeManager.PlayOneShot(localEvent, transform.position);
+        if (!isServer)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(localEvent, transform.position);
+            snapshotEmitter.SetParameter("TremoloParam", 0f);
+        }
 
-		PV.RPC(nameof(RPC_ServerShootAudio), RpcTarget.All);
+        else RPC_ServerShootAudio();
 
-		Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
-		ray.origin = cam.transform.position;
-		if (Physics.Raycast(ray, out RaycastHit hit))
-		{
-			hit.collider.gameObject.GetComponent<IDamageable>()?.TakeDamage(((GunInfo)itemInfo).damage);
-			PV.RPC("RPC_Shoot", RpcTarget.All, hit.point, hit.normal);
-		}
-	}
+        // snapshotEmitter.SetParameter("TremoloParam", 0f);
 
-	[PunRPC]
+        //      PV.RPC(nameof(RPC_ServerShootAudio), RpcTarget.All);
+
+        //Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+        //ray.origin = cam.transform.position;
+        //if (Physics.Raycast(ray, out RaycastHit hit))
+        //{
+        //	hit.collider.gameObject.GetComponent<IDamageable>()?.TakeDamage(((GunInfo)itemInfo).damage);
+        //	PV.RPC("RPC_Shoot", RpcTarget.All, hit.point, hit.normal);
+        //}
+    }
+
+    [PunRPC]
 	private void RPC_ServerShootAudio()
 	{
-		snapshotEmitter.SetParameter("TremoloParam", 0f);
-		FMODUnity.RuntimeManager.PlayOneShot(localEvent, transform.position);
-	}
+		FMODUnity.RuntimeManager.PlayOneShot(serverEvent, transform.position);
+        snapshotEmitter.SetParameter("TremoloParam", 1f);
+    }
 
-	[PunRPC]
+    [PunRPC]
 	void RPC_Shoot(Vector3 hitPosition, Vector3 hitNormal)
 	{
 		Collider[] colliders = Physics.OverlapSphere(hitPosition, 0.3f);
