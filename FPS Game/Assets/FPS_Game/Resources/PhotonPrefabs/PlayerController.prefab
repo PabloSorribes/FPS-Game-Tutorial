@@ -323,7 +323,7 @@ MonoBehaviour:
   cameraHolder: {fileID: 6149131234852570181}
   mouseSensitivity: 3
   sprintSpeed: 6
-  walkSpeed: 3
+  walkSpeed: 12
   jumpForce: 300
   smoothTime: 0.15
   items:
