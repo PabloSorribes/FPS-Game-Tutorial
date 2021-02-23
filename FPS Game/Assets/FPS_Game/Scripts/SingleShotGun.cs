@@ -49,26 +49,25 @@ public class SingleShotGun : Gun
 
 	void Shoot()
 	{
-        if (!isServer)
-        {
-            FMODUnity.RuntimeManager.PlayOneShot(localEvent, transform.position);
-            snapshotEmitter.SetParameter("TremoloParam", 0f);
-        }
+		// Play Shoot Sound for local player
+        FMODUnity.RuntimeManager.PlayOneShot(localEvent, transform.position);
+        snapshotEmitter.SetParameter("TremoloParam", 0f);
 
-        else RPC_ServerShootAudio();
+		// Send out event to play the local shoot sound on everyone else's computer.
+		PV.RPC(nameof(RPC_ServerShootAudio), RpcTarget.All);
 
-        // snapshotEmitter.SetParameter("TremoloParam", 0f);
+		// snapshotEmitter.SetParameter("TremoloParam", 0f);
 
-        //      PV.RPC(nameof(RPC_ServerShootAudio), RpcTarget.All);
+		//      PV.RPC(nameof(RPC_ServerShootAudio), RpcTarget.All);
 
-        //Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
-        //ray.origin = cam.transform.position;
-        //if (Physics.Raycast(ray, out RaycastHit hit))
-        //{
-        //	hit.collider.gameObject.GetComponent<IDamageable>()?.TakeDamage(((GunInfo)itemInfo).damage);
-        //	PV.RPC("RPC_Shoot", RpcTarget.All, hit.point, hit.normal);
-        //}
-    }
+		//Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+		//ray.origin = cam.transform.position;
+		//if (Physics.Raycast(ray, out RaycastHit hit))
+		//{
+		//	hit.collider.gameObject.GetComponent<IDamageable>()?.TakeDamage(((GunInfo)itemInfo).damage);
+		//	PV.RPC("RPC_Shoot", RpcTarget.All, hit.point, hit.normal);
+		//}
+	}
 
     [PunRPC]
 	private void RPC_ServerShootAudio()
