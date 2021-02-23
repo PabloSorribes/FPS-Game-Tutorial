@@ -8,7 +8,9 @@ public class SingleShotGun : Gun
 	private StudioEventEmitter snapshotEmitter = null;
 
 	[FMODUnity.EventRef]
-	public string gunshotEvent;
+	public string localEvent;
+	[FMODUnity.EventRef]
+	public string serverEvent;
 
 	[SerializeField] Camera cam;
 
@@ -28,11 +30,10 @@ public class SingleShotGun : Gun
 
 	void Shoot()
 	{
-		Debug.Log($"SHOOT!");
-
 		snapshotEmitter.SetParameter("TremoloParam", 1f);
+		FMODUnity.RuntimeManager.PlayOneShot(localEvent, transform.position);
 
-		FMODUnity.RuntimeManager.PlayOneShot(gunshotEvent, transform.position);
+		PV.RPC(nameof(RPC_ServerShootAudio), RpcTarget.All);
 
 		Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 		ray.origin = cam.transform.position;
@@ -44,11 +45,15 @@ public class SingleShotGun : Gun
 	}
 
 	[PunRPC]
-	void RPC_Shoot(Vector3 hitPosition, Vector3 hitNormal)
+	private void RPC_ServerShootAudio()
 	{
 		snapshotEmitter.SetParameter("TremoloParam", 0f);
-		FMODUnity.RuntimeManager.PlayOneShot(gunshotEvent, transform.position);
+		FMODUnity.RuntimeManager.PlayOneShot(localEvent, transform.position);
+	}
 
+	[PunRPC]
+	void RPC_Shoot(Vector3 hitPosition, Vector3 hitNormal)
+	{
 		Collider[] colliders = Physics.OverlapSphere(hitPosition, 0.3f);
 		if (colliders.Length != 0)
 		{
