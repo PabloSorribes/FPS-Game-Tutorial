@@ -21,6 +21,8 @@ public class SingleShotGun : Gun
 
 	void Shoot()
 	{
+		Debug.Log($"SHOOT!");
+
 		Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 		ray.origin = cam.transform.position;
 		if(Physics.Raycast(ray, out RaycastHit hit))
