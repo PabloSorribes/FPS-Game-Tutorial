@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SingleShotGun : Gun
 {
+	[SerializeField] Camera cam;
+
+
+	[Header("--- AUDIO --- ")]
 	[SerializeField]
 	private StudioEventEmitter snapshotEmitter = null;
 
@@ -12,7 +16,9 @@ public class SingleShotGun : Gun
 	[FMODUnity.EventRef]
 	public string serverEvent;
 
-	[SerializeField] Camera cam;
+	[SerializeField]
+	private AudioRaycaster audioRaycaster = null;
+
 
 	PhotonView PV;
 
@@ -32,7 +38,7 @@ public class SingleShotGun : Gun
 	{
 		// Play Shoot Sound for local player
 		FMODUnity.RuntimeManager.PlayOneShot(localEvent, transform.position);
-		snapshotEmitter.SetParameter("TremoloParam", 0f);
+		FmodHandleShoot();
 
 		// Send out event to play the SEPARATE server shoot sound on everyone else's computer.
 		PV.RPC(nameof(RPC_ServerShootAudio), RpcTarget.Others);
@@ -45,6 +51,37 @@ public class SingleShotGun : Gun
 		snapshotEmitter.SetParameter("TremoloParam", 1f);
 	}
 
+	private void FmodHandleShoot()
+	{
+		float centerHitDistance = audioRaycaster.DiagonalRaycast(AudioRaycaster.AudioReflectionDirection.Center);
+
+		float frontLeftHitDistance = audioRaycaster.DiagonalRaycast(AudioRaycaster.AudioReflectionDirection.FrontLeft);
+		float frontRightHitDistance = audioRaycaster.DiagonalRaycast(AudioRaycaster.AudioReflectionDirection.FrontRight);
+
+		float backLeftHitDistance = audioRaycaster.DiagonalRaycast(AudioRaycaster.AudioReflectionDirection.BackLeft);
+		float backRightHitDistance = audioRaycaster.DiagonalRaycast(AudioRaycaster.AudioReflectionDirection.BackRight);
+
+		//FMOD.Studio.EventInstance instance = FMODUnity.RuntimeManager.CreateInstance(localEvent);
+		FMOD.Studio.EventInstance instance = snapshotEmitter.EventInstance;
+
+		instance.setParameterByName("Delay_Center", centerHitDistance);
+
+		instance.setParameterByName("Delay_FrontLeft", frontLeftHitDistance);
+		instance.setParameterByName("Delay_FrontRight", frontRightHitDistance);
+
+		instance.setParameterByName("Delay_BackLeft", backLeftHitDistance);
+		instance.setParameterByName("Delay_BackRight", backRightHitDistance);
+
+		instance.setParameterByName("Reverb_Front", audioRaycaster.Reverb_Front);
+		instance.setParameterByName("Reverb_Center", audioRaycaster.Reverb_Center);
+		instance.setParameterByName("Reverb_Back", audioRaycaster.Reverb_Back);
+
+		RuntimeManager.PlayOneShot(localEvent, transform.position);
+
+		//instance.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
+		//instance.start();
+		//instance.release();
+	}
 
 
 	//if (PhotonNetwork.LocalPlayer.IsLocal)
