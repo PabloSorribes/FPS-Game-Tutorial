@@ -68,6 +68,7 @@ GameObject:
   - component: {fileID: 1488053957094389958}
   - component: {fileID: 1488053957094389952}
   - component: {fileID: 1488053957094389953}
+  - component: {fileID: 9165415773030160412}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -139,7 +140,21 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488053957094389959}
+  m_Enabled: 0
+--- !u!114 &9165415773030160412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488053957094389959}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1 &1488053958305132839
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +482,7 @@ GameObject:
   - component: {fileID: 1676132140338284414}
   - component: {fileID: 3968076902418886796}
   - component: {fileID: 5345974477687618155}
+  - component: {fileID: 7056343375562780325}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -505,6 +521,8 @@ MonoBehaviour:
   itemGameObject: {fileID: 2872424139362127188}
   bulletImpactPrefab: {fileID: 6521945633980296980, guid: e53c980aac40f714e8037076227eeeec,
     type: 3}
+  snapshotEmitter: {fileID: 7056343375562780325}
+  gunshotEvent: event:/TestEvent
   cam: {fileID: 1488053957094389952}
 --- !u!114 &5345974477687618155
 MonoBehaviour:
@@ -528,6 +546,29 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &7056343375562780325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5068796754887890211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: snapshot:/TestTremoloSnapshot
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &6141460071634955227
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +643,7 @@ GameObject:
   - component: {fileID: 661285188742022458}
   - component: {fileID: 6732414030161505931}
   - component: {fileID: 2675163236868231600}
+  - component: {fileID: 6655162136409015553}
   m_Layer: 0
   m_Name: Rifle
   m_TagString: Untagged
@@ -640,6 +682,8 @@ MonoBehaviour:
   itemGameObject: {fileID: 6141460071634955227}
   bulletImpactPrefab: {fileID: 6521945633980296980, guid: e53c980aac40f714e8037076227eeeec,
     type: 3}
+  snapshotEmitter: {fileID: 6655162136409015553}
+  gunshotEvent: event:/TestEvent
   cam: {fileID: 1488053957094389952}
 --- !u!114 &2675163236868231600
 MonoBehaviour:
@@ -663,6 +707,29 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &6655162136409015553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6444605041853771924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: snapshot:/TestTremoloSnapshot
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &8227353499824922674
 GameObject:
   m_ObjectHideFlags: 0
