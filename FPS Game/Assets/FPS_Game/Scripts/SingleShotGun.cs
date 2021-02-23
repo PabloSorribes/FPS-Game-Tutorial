@@ -34,10 +34,8 @@ public class SingleShotGun : Gun
 		FMODUnity.RuntimeManager.PlayOneShot(localEvent, transform.position);
 		snapshotEmitter.SetParameter("TremoloParam", 0f);
 
-		// Send out event to play the local shoot sound on everyone else's computer.
+		// Send out event to play the SEPARATE server shoot sound on everyone else's computer.
 		PV.RPC(nameof(RPC_ServerShootAudio), RpcTarget.Others);
-
-		Debug.Log($"LocalPlayer: {PhotonNetwork.LocalPlayer.ActorNumber}");
 	}
 
     [PunRPC]
@@ -45,12 +43,12 @@ public class SingleShotGun : Gun
 	{
 		FMODUnity.RuntimeManager.PlayOneShot(serverEvent, transform.position);
 		snapshotEmitter.SetParameter("TremoloParam", 1f);
-		Debug.Log($"ServerPlayer: {PhotonNetwork.LocalPlayer.ActorNumber}");
-
-
-		if (!PhotonNetwork.LocalPlayer.IsLocal)
-		{
-			
-		}
 	}
+
+
+
+	//if (PhotonNetwork.LocalPlayer.IsLocal)
+	//{
+	//	// Do stuff if local player
+	//}
 }
