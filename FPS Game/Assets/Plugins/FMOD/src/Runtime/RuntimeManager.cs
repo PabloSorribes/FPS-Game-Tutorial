@@ -1088,7 +1088,35 @@ retry:
             }
         }
 
-        public static void PlayOneShot(Guid guid, Vector3 position = new Vector3())
+		// NoodleGore Overload Method
+		public static void PlayOneShot(string path, Vector3 position = new Vector3(), string parameterName = null, float paramValue = 0f, bool ignoreSeekSpeed = false)
+		{
+			try
+			{
+				PlayOneShot(PathToGUID(path), position, parameterName, paramValue, ignoreSeekSpeed);
+			}
+			catch (EventNotFoundException)
+			{
+				Debug.LogWarning("[FMOD] Event not found: " + path);
+			}
+		}
+
+		// NoodleGore Overload Method
+		public static void PlayOneShot(Guid guid, Vector3 position = new Vector3(), string parameterName = null, float paramValue = 0f, bool ignoreSeekSpeed = false)
+		{
+			var instance = CreateInstance(guid);
+			instance.set3DAttributes(RuntimeUtils.To3DAttributes(position));
+
+			if (parameterName != null)
+			{
+				instance.setParameterByName(parameterName, paramValue, ignoreSeekSpeed);
+			}
+
+			instance.start();
+			instance.release();
+		}
+
+		public static void PlayOneShot(Guid guid, Vector3 position = new Vector3())
         {
             var instance = CreateInstance(guid);
             instance.set3DAttributes(RuntimeUtils.To3DAttributes(position));
