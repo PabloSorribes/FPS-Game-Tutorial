@@ -260,6 +260,46 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-6797017009982250541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ExampleGunShot/Delay_FrontLeft
+  m_EditorClassIdentifier: 
+  Name: Delay_FrontLeft
+  Min: 0
+  Max: 65
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-6744102422184424335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetwork/Delay_BackRight
+  m_EditorClassIdentifier: 
+  Name: Delay_BackRight
+  Min: 0
+  Max: 65
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-6738601163078097913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,6 +373,26 @@ MonoBehaviour:
   m_Name: parameter:/DelayNetwork/Delay_BackRight
   m_EditorClassIdentifier: 
   Name: Delay_BackRight
+  Min: 0
+  Max: 65
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-6487411919270871746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetwork/Delay_BackLeft
+  m_EditorClassIdentifier: 
+  Name: Delay_BackLeft
   Min: 0
   Max: 65
   Default: 0
@@ -431,6 +491,26 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/DelayNetwork/Delay_Center
+  m_EditorClassIdentifier: 
+  Name: Delay_Center
+  Min: 0
+  Max: 65
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-6142648428768602684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ExampleGunShot/Delay_Center
   m_EditorClassIdentifier: 
   Name: Delay_Center
   Min: 0
@@ -809,6 +889,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-3980106275868033133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/TestTremoloSnapshot/TremoloParam
+  m_EditorClassIdentifier: 
+  Name: TremoloParam
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-3795473150032808454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1397,7 +1497,7 @@ MonoBehaviour:
   - {fileID: 4080916426653834510}
   StringsBanks:
   - {fileID: 5059106256614123225}
-  stringsBankWriteTime: 637497038104193318
+  stringsBankWriteTime: 637497762510324014
   cacheVersion: 6
 --- !u!114 &81910787139608769
 MonoBehaviour:
@@ -1698,14 +1798,14 @@ MonoBehaviour:
   Banks:
   - {fileID: 4080916426653834510}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 81910787139608769}
-  - {fileID: -9139700702706557622}
-  - {fileID: -4760048588708625250}
-  - {fileID: 6666904923872014765}
-  - {fileID: -7830739444168754680}
+  - {fileID: 2263259386611327779}
+  - {fileID: -6487411919270871746}
+  - {fileID: 2084231175016764681}
+  - {fileID: -6744102422184424335}
+  - {fileID: 8598689929962004333}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -1728,10 +1828,15 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: -6797017009982250541}
+  - {fileID: 4636910329484704186}
+  - {fileID: -6142648428768602684}
+  - {fileID: 6747180416998290914}
+  - {fileID: 1653640436718778849}
   MinDistance: 1
-  MaxDistance: 65
-  Length: 2000
+  MaxDistance: 100
+  Length: 648
 --- !u!114 &1467032363019761094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1832,6 +1937,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &1653640436718778849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ExampleGunShot/Delay_FrontRight
+  m_EditorClassIdentifier: 
+  Name: Delay_FrontRight
+  Min: 0
+  Max: 65
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &1985881180308569520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1852,6 +1977,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &2084231175016764681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetwork/Delay_FrontRight
+  m_EditorClassIdentifier: 
+  Name: Delay_FrontRight
+  Min: 0
+  Max: 65
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &2135749723855449258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1872,6 +2017,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &2263259386611327779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetwork/Delay_Center
+  m_EditorClassIdentifier: 
+  Name: Delay_Center
+  Min: 0
+  Max: 65
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &2281904732010275357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2313,7 +2478,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637497038104128310
+  lastModified: 637497762510314024
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -2437,6 +2602,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &4636910329484704186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ExampleGunShot/Delay_BackRight
+  m_EditorClassIdentifier: 
+  Name: Delay_BackRight
+  Min: 0
+  Max: 65
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &4779007319520319028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2552,11 +2737,11 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637497038104193318
+  lastModified: 637497762510324014
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 1794
+    Value: 1846
   Exists: 1
 --- !u!114 &5247348586512427448
 MonoBehaviour:
@@ -2838,6 +3023,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &6747180416998290914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ExampleGunShot/Delay_BackLeft
+  m_EditorClassIdentifier: 
+  Name: Delay_BackLeft
+  Min: 0
+  Max: 65
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &6898238380139266555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3038,8 +3243,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -2457361822938503444}
-  - {fileID: -3019745157511703725}
+  - {fileID: -3980106275868033133}
+  - {fileID: 8600418497018652599}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -3105,6 +3310,46 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &8598689929962004333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetwork/Delay_FrontLeft
+  m_EditorClassIdentifier: 
+  Name: Delay_FrontLeft
+  Min: 0
+  Max: 65
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &8600418497018652599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/TestTremoloSnapshot/Delay_Center
+  m_EditorClassIdentifier: 
+  Name: Delay_Center
+  Min: 0
+  Max: 65
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &8605268346560103712
 MonoBehaviour:
   m_ObjectHideFlags: 0

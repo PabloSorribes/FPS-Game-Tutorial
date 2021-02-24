@@ -18,10 +18,11 @@ public class AudioRaycaster : MonoBehaviour
 		FrontLeft,
 		FrontRight,
 		BackLeft,
-		BackRight
+		BackRight,
+        Up
 	}
 
-	public float DiagonalRaycast(AudioReflectionDirection reflectionDirection)
+	public float DirectionalRaycast(AudioReflectionDirection reflectionDirection)
 	{
 		float distanceToObstacle = maxDistance;
 
@@ -29,6 +30,11 @@ public class AudioRaycaster : MonoBehaviour
 		Transform trans = transform;
 
 		Vector3 finalWorldDirection = trans.forward;
+
+        // testing some stuff - Anders
+        Vector3 frontLeftWorldDir = transform.position;
+        float frontLeftDistance = 0f;
+
 		Color debugColor = Color.red;
 
 		switch (reflectionDirection)
@@ -39,10 +45,12 @@ public class AudioRaycaster : MonoBehaviour
 				break;
 			case AudioReflectionDirection.FrontLeft:
 				finalWorldDirection = (trans.forward - trans.right).normalized;
+                
 				debugColor = Color.red;
 				break;
 			case AudioReflectionDirection.FrontRight:
 				finalWorldDirection = (trans.forward + trans.right).normalized;
+                frontLeftWorldDir = finalWorldDirection;
 				debugColor = Color.blue;
 				break;
 			case AudioReflectionDirection.BackLeft:
@@ -53,7 +61,12 @@ public class AudioRaycaster : MonoBehaviour
 				finalWorldDirection = (-trans.forward + trans.right).normalized;
 				debugColor = Color.yellow;
 				break;
-		}
+
+            case AudioReflectionDirection.Up:
+                finalWorldDirection = (transform.up.normalized);
+                debugColor = Color.cyan;
+                break;
+        }
 
 		RaycastHit hit;
 
@@ -64,9 +77,29 @@ public class AudioRaycaster : MonoBehaviour
 			distanceToObstacle = hit.distance;
 		}
 
-		Debug.Log($"Direction: {reflectionDirection} | Distance to Obstacle: {distanceToObstacle}");
-		Debug.DrawRay(origin, finalWorldDirection * distanceToObstacle, debugColor, 5f);
+        if (Physics.SphereCast(origin, sphereCollider.radius, frontLeftWorldDir, out hit, maxDistance))
+        {
+            frontLeftDistance = hit.distance;
+        }
+        // figuring out the space using extra superduper quantum mathematics.
+        /* 
+         * Basically we do this for every cast and then we go "if all these are big and we hit the ceiling, we are inside a huge room"
+         * If we are all hitting the walls but it's less distance and we hit the ceiling, we are inside a medium room.
+         * If we all hit the walls and we hit the ceiling, we are in a small room.
+         */
+            //if (frontLeftDistance > 40) Debug.Log("FrontLEft distance is now in a big room");
+            //if (frontLeftDistance < 40 & frontLeftDistance > 20) Debug.Log("FrontLEft distance is now in a medium room");
+            //if (frontLeftDistance < 20) Debug.Log("FrontLEft distance is now in a small room");
+            //if (hit.collider.gameObject !=null) Debug.Log("The collider returned (if any) is " + hit.collider.gameObject.name);
+            //Debug.Log("Tag for this collider (if any) is " + hit.transform.tag);
+            //Debug.DrawRay(origin, finalWorldDirection * distanceToObstacle, debugColor, 5f);
+
+         Debug.Log($"Direction: {reflectionDirection} | Distance to Obstacle: {distanceToObstacle}");
+
+        
 
 		return distanceToObstacle;
+
+        
 	}
 }

@@ -72,13 +72,15 @@ public class SingleShotGun : Gun
 
 	private void UpdateShotReverb()
 	{
-		float centerHitDistance = audioRaycaster.DiagonalRaycast(AudioRaycaster.AudioReflectionDirection.Center);
+		float centerHitDistance = audioRaycaster.DirectionalRaycast(AudioRaycaster.AudioReflectionDirection.Center);
 
-		float frontLeftHitDistance = audioRaycaster.DiagonalRaycast(AudioRaycaster.AudioReflectionDirection.FrontLeft);
-		float frontRightHitDistance = audioRaycaster.DiagonalRaycast(AudioRaycaster.AudioReflectionDirection.FrontRight);
+		float frontLeftHitDistance = audioRaycaster.DirectionalRaycast(AudioRaycaster.AudioReflectionDirection.FrontLeft);
+		float frontRightHitDistance = audioRaycaster.DirectionalRaycast(AudioRaycaster.AudioReflectionDirection.FrontRight);
 
-		float backLeftHitDistance = audioRaycaster.DiagonalRaycast(AudioRaycaster.AudioReflectionDirection.BackLeft);
-		float backRightHitDistance = audioRaycaster.DiagonalRaycast(AudioRaycaster.AudioReflectionDirection.BackRight);
+		float backLeftHitDistance = audioRaycaster.DirectionalRaycast(AudioRaycaster.AudioReflectionDirection.BackLeft);
+		float backRightHitDistance = audioRaycaster.DirectionalRaycast(AudioRaycaster.AudioReflectionDirection.BackRight);
+
+        float up = audioRaycaster.DirectionalRaycast(AudioRaycaster.AudioReflectionDirection.Up);
 
 		FMOD.Studio.EventInstance instance = snapshotEmitter.EventInstance;
 
