@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Photon.Pun;
 
 namespace Sonigon
 {
@@ -12,6 +13,9 @@ namespace Sonigon
 
 		[SerializeField]
 		BoxCollider trigger = null;
+
+		//[SerializeField]
+		//PhotonView photonView = null;
 
 		#region Debug
 		[Header("--- DEBUG ---")]
@@ -53,13 +57,19 @@ namespace Sonigon
 		{
 			if (other.CompareTag("Player"))
 			{
-				var sonigonReverbZoneManager = other.GetComponentInChildren<SonigonReverbZoneManager>();
+				if (other.GetComponent<PhotonView>().IsMine)
+				{
+					Debug.Log($"Local player entered, execute stuff here!");
 
 
-				if (isIndoor)
-					sonigonReverbZoneManager.AddIndoorZone(this.reverbTag);
-				else
-					sonigonReverbZoneManager.AddOutdoorZone(this.reverbTag);
+					var sonigonReverbZoneManager = other.GetComponentInChildren<SonigonReverbZoneManager>();
+
+					if (isIndoor)
+						sonigonReverbZoneManager.AddIndoorZone(this.reverbTag);
+					else
+						sonigonReverbZoneManager.AddOutdoorZone(this.reverbTag);
+
+				}
 			}
 		}
 
@@ -67,12 +77,18 @@ namespace Sonigon
 		{
 			if (other.CompareTag("Player"))
 			{
-				var sonigonReverbZoneManager = other.GetComponentInChildren<SonigonReverbZoneManager>();
+				if (other.GetComponent<PhotonView>().IsMine)
+				{
+					Debug.Log($"Local player exited, execute stuff here!");
 
-				if (isIndoor)
-					sonigonReverbZoneManager.RemoveIndoorZone(this.reverbTag);
-				else
-					sonigonReverbZoneManager.RemoveOutdoorZone(this.reverbTag);
+
+					var sonigonReverbZoneManager = other.GetComponentInChildren<SonigonReverbZoneManager>();
+
+					if (isIndoor)
+						sonigonReverbZoneManager.RemoveIndoorZone(this.reverbTag);
+					else
+						sonigonReverbZoneManager.RemoveOutdoorZone(this.reverbTag);
+				}
 			}
 		}
 
