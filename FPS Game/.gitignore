@@ -70,6 +70,7 @@ Assets/FMODAssets/*
 Assets/StreamingAssets/*
 Assets/StreamingAssets.meta
 Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
+Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset.meta
 Assets/FMODStudioCache.asset
 Assets/FMODStudioCache.asset.meta
 Assets/FMODStudioCache.meta
