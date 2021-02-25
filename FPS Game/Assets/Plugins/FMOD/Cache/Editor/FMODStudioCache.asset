@@ -494,11 +494,11 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637498486912986198
+  lastModified: 637498521901343293
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 2256
+    Value: 2410
   Exists: 1
 --- !u!114 &-7951819256855454270
 MonoBehaviour:
@@ -735,9 +735,29 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637498486912936186
+  lastModified: 637498521901273279
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &-7476509230661234749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetwork/Delay_BackRight
+  m_EditorClassIdentifier: 
+  Name: Delay_BackRight
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-7285121671186848412
 MonoBehaviour:
@@ -819,6 +839,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-7171205637522972762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetwork/Delay_FrontLeft
+  m_EditorClassIdentifier: 
+  Name: Delay_FrontLeft
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-7121566693291341284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -838,7 +878,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7088907866436684274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1278,6 +1318,26 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
+  Exists: 0
+--- !u!114 &-6310688936453008366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetwork/Delay_BackLeft
+  m_EditorClassIdentifier: 
+  Name: Delay_BackLeft
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-6300100040730230654
 MonoBehaviour:
@@ -1379,6 +1439,54 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-6200893519706136272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/ReverbZone_Indoor/ReverbZone_IndoorCave
+  m_EditorClassIdentifier: 
+  Path: snapshot:/ReverbZone_Indoor/ReverbZone_IndoorCave
+  guid: b4c053604c808043bd2e4cefd7d3135e
+  Banks:
+  - {fileID: -929176463553865992}
+  - {fileID: -7568900484989918363}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-6181427020346410768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/ReverbZone_Indoor/ReverbZone_IndoorShip
+  m_EditorClassIdentifier: 
+  Path: snapshot:/ReverbZone_Indoor/ReverbZone_IndoorShip
+  guid: a4a03ad68178444aaa62d756c0e4379b
+  Banks:
+  - {fileID: -929176463553865992}
+  - {fileID: -7568900484989918363}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-6169911305332345208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1513,9 +1621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: snapshot:/ReverbZone_IndoorShip
   guid: a4a03ad68178444aaa62d756c0e4379b
-  Banks:
-  - {fileID: -929176463553865992}
-  - {fileID: -7568900484989918363}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1597,9 +1703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: snapshot:/ReverbZone_Outdoor_Mountains
   guid: 1162b8c2c1bb394cb0cec035c9c96122
-  Banks:
-  - {fileID: -929176463553865992}
-  - {fileID: -7568900484989918363}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1788,11 +1892,11 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 3565607789175899404}
-  - {fileID: -2148861432019528271}
-  - {fileID: 1203269705260902374}
-  - {fileID: -1674705900505828551}
-  - {fileID: 6341288521949980627}
+  - {fileID: 440930888715250196}
+  - {fileID: 8350174903027110682}
+  - {fileID: 2784450612141550842}
+  - {fileID: -3106965829541822796}
+  - {fileID: 5351694977327128455}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -2203,6 +2307,30 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-4973574359451207554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/ReverbZone_Outdoor/ReverbZone_OutdoorCanyon
+  m_EditorClassIdentifier: 
+  Path: snapshot:/ReverbZone_Outdoor/ReverbZone_OutdoorCanyon
+  guid: c2e76f7ec625074a832c03cb56fae2a2
+  Banks:
+  - {fileID: -929176463553865992}
+  - {fileID: -7568900484989918363}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-4921296691245941682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2450,14 +2578,14 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -3112975995882556505}
-  - {fileID: 854824811476382863}
-  - {fileID: 5531607196918735994}
-  - {fileID: 5986294511580393278}
-  - {fileID: 1602605942576691953}
-  - {fileID: -6374084523556528758}
-  - {fileID: -7121566693291341284}
-  - {fileID: -4151012395668380089}
+  - {fileID: -2539967242268375097}
+  - {fileID: 5484858261843109362}
+  - {fileID: -6310688936453008366}
+  - {fileID: 3184029768787413058}
+  - {fileID: -1474577691302871776}
+  - {fileID: 1281525487051766942}
+  - {fileID: -7476509230661234749}
+  - {fileID: -7171205637522972762}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -2737,8 +2865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Logic/SnaphotSwitcher
   guid: a63cf93984f3a04a9f8ea3afc73d675d
-  Banks:
-  - {fileID: -929176463553865992}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2766,7 +2893,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-4129528291136111628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3545,6 +3672,26 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
+  Exists: 0
+--- !u!114 &-3106965829541822796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetworkBKUP/Delay_BackRight
+  m_EditorClassIdentifier: 
+  Name: Delay_BackRight
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-3019745157511703725
 MonoBehaviour:
@@ -3806,6 +3953,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-2539967242268375097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetwork/Reverb_Back
+  m_EditorClassIdentifier: 
+  Name: Reverb_Back
+  Min: -80
+  Max: 0
+  Default: -9
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-2457361822938503444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4005,7 +4172,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2137055191006155306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4227,7 +4394,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1632447484848819847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4268,6 +4435,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-1474577691302871776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetwork/Reverb_Front
+  m_EditorClassIdentifier: 
+  Name: Reverb_Front
+  Min: -80
+  Max: 0
+  Default: -9
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-1425501726438923658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4543,7 +4730,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Logic.bank
   Name: Logic
   StudioPath: bank:/Logic
-  lastModified: 637498486912316075
+  lastModified: 637498521900538148
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -5127,18 +5314,18 @@ MonoBehaviour:
   - {fileID: -5504948850176497478}
   - {fileID: -4539582422454824641}
   - {fileID: -4768837989889715335}
-  - {fileID: -5834952576553338778}
-  - {fileID: -5927341120103274508}
-  - {fileID: 7339940282836486997}
-  - {fileID: 3541075350692486597}
-  - {fileID: -4202676096979305427}
   - {fileID: -4693738275865566095}
+  - {fileID: 9219696993244764459}
+  - {fileID: -6181427020346410768}
+  - {fileID: 6236293350025895813}
+  - {fileID: -6200893519706136272}
+  - {fileID: -4973574359451207554}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7568900484989918363}
   StringsBanks:
   - {fileID: -8068535293385998767}
-  stringsBankWriteTime: 637498486912986198
+  stringsBankWriteTime: 637498521901343293
   cacheVersion: 6
 --- !u!114 &81910787139608769
 MonoBehaviour:
@@ -5200,6 +5387,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &440930888715250196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetworkBKUP/Delay_BackLeft
+  m_EditorClassIdentifier: 
+  Name: Delay_BackLeft
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &479273611058794244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5398,7 +5605,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &890390271513871273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5660,7 +5867,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &1267637485720095895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5677,6 +5884,26 @@ MonoBehaviour:
   Min: 0
   Max: 65
   Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &1281525487051766942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetwork/Reverb_Center
+  m_EditorClassIdentifier: 
+  Name: Reverb_Center
+  Min: -80
+  Max: 0
+  Default: -18
   ID:
     data1: 0
     data2: 0
@@ -5916,7 +6143,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &1607864184175137768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6570,6 +6797,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &2784450612141550842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetworkBKUP/Delay_FrontRight
+  m_EditorClassIdentifier: 
+  Name: Delay_FrontRight
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &2821346454813530597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6816,6 +7063,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &3184029768787413058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetwork/Delay_FrontRight
+  m_EditorClassIdentifier: 
+  Name: Delay_FrontRight
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &3224808896109911195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6950,9 +7217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: snapshot:/ReverbZone_OutdoorCanyon
   guid: c2e76f7ec625074a832c03cb56fae2a2
-  Banks:
-  - {fileID: -929176463553865992}
-  - {fileID: -7568900484989918363}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -6979,7 +7244,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &3605336968841862408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7965,6 +8230,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &5351694977327128455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetworkBKUP/Delay_FrontLeft
+  m_EditorClassIdentifier: 
+  Name: Delay_FrontLeft
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &5369149476580746833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8065,6 +8350,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &5484858261843109362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetwork/Delay_Center
+  m_EditorClassIdentifier: 
+  Name: Delay_Center
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &5531607196918735994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8084,7 +8389,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &5553139011468206788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8344,7 +8649,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &6057918240887066402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8445,6 +8750,30 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &6236293350025895813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Logic/ReverbZoneSnapshotSwitcher
+  m_EditorClassIdentifier: 
+  Path: event:/Logic/ReverbZoneSnapshotSwitcher
+  guid: a63cf93984f3a04a9f8ea3afc73d675d
+  Banks:
+  - {fileID: -929176463553865992}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7205050868551054120}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &6309854833375673597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8524,7 +8853,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &6347520128211847538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8845,6 +9174,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &7205050868551054120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ReverbZoneSnapshotSwitcher/ReverbZone
+  m_EditorClassIdentifier: 
+  Name: ReverbZone
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &7339940282836486997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8859,9 +9208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: snapshot:/ReverbZone_IndoorCave
   guid: b4c053604c808043bd2e4cefd7d3135e
-  Banks:
-  - {fileID: -929176463553865992}
-  - {fileID: -7568900484989918363}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -9272,6 +9619,26 @@ MonoBehaviour:
   Min: -80
   Max: 0
   Default: -18
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &8350174903027110682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DelayNetworkBKUP/Delay_Center
+  m_EditorClassIdentifier: 
+  Name: Delay_Center
+  Min: 0
+  Max: 100
+  Default: 0
   ID:
     data1: 0
     data2: 0
@@ -9818,3 +10185,27 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &9219696993244764459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/ReverbZone_Outdoor/ReverbZone_Outdoor_Mountains
+  m_EditorClassIdentifier: 
+  Path: snapshot:/ReverbZone_Outdoor/ReverbZone_Outdoor_Mountains
+  guid: 1162b8c2c1bb394cb0cec035c9c96122
+  Banks:
+  - {fileID: -929176463553865992}
+  - {fileID: -7568900484989918363}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0

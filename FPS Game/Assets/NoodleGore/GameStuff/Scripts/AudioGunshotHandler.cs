@@ -15,6 +15,13 @@ public class AudioGunshotHandler : MonoBehaviour
 		photonView = GetComponent<PhotonView>();
 	}
 
+	private void Update()
+	{
+		//TODO - Remove this in the proper implementation
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
+	}
+
 	public void Shoot()
 	{
 		// Play Shoot Sound for local player
