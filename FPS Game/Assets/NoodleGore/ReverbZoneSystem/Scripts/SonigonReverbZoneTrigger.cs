@@ -29,9 +29,11 @@ namespace Sonigon
         private void Start()
 		{
 			sonigonReverbZoneManager = FindObjectOfType<SonigonReverbZoneManager>();
+
             meshRenderer.enabled = true;        // enable/disable this with a key
-            meshRenderer.material.color = debugColor;
-        }
+			Color debugColorTemp = new Color(debugColor.r, debugColor.g, debugColor.b, debugAlpha);
+            meshRenderer.material.color = debugColorTemp;
+		}
 
 		private void OnTriggerEnter(Collider other)
 		{
@@ -49,22 +51,12 @@ namespace Sonigon
 			}
 		}
 
-		private void OnValidate()
-		{
-			//name = "ReverbZone_" + reverbTag?.reverbType;
-		}
-
 		private void OnDrawGizmos()
 		{
 			Color debugColorTemp = new Color(debugColor.r, debugColor.g, debugColor.b, debugAlpha);
 			Gizmos.color = debugColorTemp;
 			Gizmos.matrix = transform.localToWorldMatrix;
 			Gizmos.DrawCube(trigger.center, trigger.size);
-            //Gizmos.DrawCube(transform.position, transform.localScale);
-
-            
 		}
-
-        
 	}
 }
