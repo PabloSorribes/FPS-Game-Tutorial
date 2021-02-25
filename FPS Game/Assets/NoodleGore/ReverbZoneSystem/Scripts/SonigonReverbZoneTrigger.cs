@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Photon.Pun;
 
 namespace Sonigon
 {
@@ -51,10 +52,9 @@ namespace Sonigon
 
 		private void OnTriggerEnter(Collider other)
 		{
-			if (other.CompareTag("Player"))
+			if (other.CompareTag("Player") && PhotonNetwork.LocalPlayer.IsLocal)
 			{
 				var sonigonReverbZoneManager = other.GetComponentInChildren<SonigonReverbZoneManager>();
-
 
 				if (isIndoor)
 					sonigonReverbZoneManager.AddIndoorZone(this.reverbTag);
@@ -65,7 +65,7 @@ namespace Sonigon
 
 		private void OnTriggerExit(Collider other)
 		{
-			if (other.CompareTag("Player"))
+			if (other.CompareTag("Player") && PhotonNetwork.LocalPlayer.IsLocal)
 			{
 				var sonigonReverbZoneManager = other.GetComponentInChildren<SonigonReverbZoneManager>();
 
