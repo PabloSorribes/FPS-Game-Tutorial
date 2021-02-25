@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sonigon;
 
-public class ReverbZoneTrigger : MonoBehaviour
+public class AudioReverbZoneTrigger : MonoBehaviour
 {
 
     public enum ReverbZone

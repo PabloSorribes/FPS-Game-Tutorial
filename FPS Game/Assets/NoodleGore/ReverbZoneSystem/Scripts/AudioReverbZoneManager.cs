@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class AudioReverbZoneManager : MonoBehaviour
 {
-	[Header("--- Events --- ")]
     [SerializeField]
     private StudioEventEmitter ReverbZoneSnapshotSwitcherEvent = null;
 
