@@ -9,9 +9,9 @@ public class SingleShotGun : Gun
 
 	[Header("--- AUDIO --- ")]
 	[SerializeField]
-	private StudioEventEmitter snapshotEmitter = null;
+	private StudioEventEmitter delayNetworkSnapshot = null;
     [SerializeField]
-    private StudioEventEmitter snapshotEvent= null;
+    private StudioEventEmitter convolutionSwitcherEvent= null;
 
 
     [FMODUnity.EventRef]
@@ -31,8 +31,8 @@ public class SingleShotGun : Gun
 	{
 		PV = GetComponent<PhotonView>();
 
-		snapshotEmitter.Play();
-        snapshotEvent.Play();
+		delayNetworkSnapshot.Play();
+        convolutionSwitcherEvent.Play();
 	}
 
 	public override void Use()
@@ -92,7 +92,7 @@ public class SingleShotGun : Gun
 
         float up = audioRaycaster.DirectionalRaycast(AudioRaycaster.AudioReflectionDirection.Up);
 
-		FMOD.Studio.EventInstance instance = snapshotEmitter.EventInstance;
+		FMOD.Studio.EventInstance instance = delayNetworkSnapshot.EventInstance;
 
 		instance.setParameterByName("Delay_Center", centerHitDistance);
 
@@ -107,32 +107,32 @@ public class SingleShotGun : Gun
     {
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            snapshotEvent.SetParameter("ReverbZone", 0);
+            convolutionSwitcherEvent.SetParameter("ReverbZone", 0);
             Debug.Log("reverb set:  Default");
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            snapshotEvent.SetParameter("ReverbZone", 1);
+            convolutionSwitcherEvent.SetParameter("ReverbZone", 1);
             Debug.Log("reverb set:  IndoorCave");
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
-            snapshotEvent.SetParameter("ReverbZone", 2);
+            convolutionSwitcherEvent.SetParameter("ReverbZone", 2);
             Debug.Log("reverb set:  IndoorShip");
         }
 
 
         if (Input.GetKeyDown(KeyCode.Alpha7))
         {
-            snapshotEvent.SetParameter("ReverbZone", 3);
+            convolutionSwitcherEvent.SetParameter("ReverbZone", 3);
             Debug.Log("reverb set:  OutdoorCanyon");
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha8))
         {
-            snapshotEvent.SetParameter("ReverbZone", 4);
+            convolutionSwitcherEvent.SetParameter("ReverbZone", 4);
             Debug.Log("reverb set:  OutdoorMountains");
         }
     }

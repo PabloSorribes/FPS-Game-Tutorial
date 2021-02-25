@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 6605915088559755498}
-  maxDistance: 65
+  maxDistance: 100
   Reverb_Front: -9
   Reverb_Center: -18
   Reverb_Back: -9

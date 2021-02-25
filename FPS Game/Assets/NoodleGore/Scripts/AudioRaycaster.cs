@@ -3,14 +3,7 @@
 public class AudioRaycaster : MonoBehaviour
 {
 	public SphereCollider sphereCollider;
-	public float maxDistance = 65f;
-
-	[Range(-80f, 0f)]
-	public float Reverb_Front = 0f;
-	[Range(-80f, 0f)]
-	public float Reverb_Center = 0f;
-	[Range(-80f, 0f)]
-	public float Reverb_Back = 0f;
+	public float maxDistance = 100f;
 
 	public enum AudioReflectionDirection
 	{
