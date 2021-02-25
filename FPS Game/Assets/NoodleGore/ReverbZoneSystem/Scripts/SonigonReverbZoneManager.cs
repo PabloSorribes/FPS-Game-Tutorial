@@ -26,36 +26,71 @@ namespace Sonigon
 			reverbSnapshotSwitcher_Outdoor.Play();
 		}
 
+		public void AddIndoorZone(SoundTagReverbBase zoneInfo)
+		{
+			currentTriggerZones_Indoor.Add(zoneInfo);
+			UpdateReverbSnapshotParameter();
+		}
+
+		public void RemoveIndoorZone(SoundTagReverbBase zoneInfo)
+		{
+			currentTriggerZones_Indoor.Remove(zoneInfo);
+			UpdateReverbSnapshotParameter();
+		}
+
+
 		public void AddOutdoorZone(SoundTagReverbBase zoneInfo)
 		{
-			//Debug.Log($"ADD ZONE: {zoneInfo.reverbType} = {(int)zoneInfo.reverbType}");
 			currentTriggerZones_Outdoor.Add(zoneInfo);
 			UpdateReverbSnapshotParameter();
 		}
 
 		public void RemoveOutdoorZone(SoundTagReverbBase zoneInfo)
 		{
-			//Debug.Log($"REMOVE ZONE: {zoneInfo.reverbType} = {(int)zoneInfo.reverbType}");
 			currentTriggerZones_Outdoor.Remove(zoneInfo);
 			UpdateReverbSnapshotParameter();
 		}
 
 		public void UpdateReverbSnapshotParameter()
 		{
-			Debug.Log($"Old Parameter Value: {currentOutdoorParameterValue}");
+			bool isIndoor = false;
 
 			// Reset to default if no entries left in the list.
-			if (currentTriggerZones_Outdoor.Count == 0)
+			if (currentTriggerZones_Indoor.Count == 0)
 			{
-				currentOutdoorParameterValue = 0;
+				currentIndoorParameterValue = 0;
 			}
 			else
 			{
-				currentOutdoorParameterValue = currentTriggerZones_Outdoor[currentTriggerZones_Outdoor.Count - 1].GetParameterValue();
+				isIndoor = true;
+				currentIndoorParameterValue = currentTriggerZones_Indoor[currentTriggerZones_Indoor.Count - 1].GetParameterValue();
+
+				// Set OutDoor to its Default Value when you are inside a building/room/house etc.
+				currentOutdoorParameterValue = 0;
 			}
 
+			// Only play the OutDoor snapshot if there isn't any Indoor snapshots left to play
+			if (!isIndoor)
+			{
+				// Reset to default if no entries left in the list.
+				if (currentTriggerZones_Outdoor.Count == 0)
+				{
+					currentOutdoorParameterValue = 0;
+				}
+				else
+				{
+					currentOutdoorParameterValue = currentTriggerZones_Outdoor[currentTriggerZones_Outdoor.Count - 1].GetParameterValue();
+				}
+			}
+
+			UpdateSnapshots();
+		}
+
+		private void UpdateSnapshots()
+		{
+			// Update snapshots
+			reverbSnapshotSwitcher_Indoor.SetParameter("ReverbZone", currentIndoorParameterValue);
 			reverbSnapshotSwitcher_Outdoor.SetParameter("ReverbZone", currentOutdoorParameterValue);
-			Debug.Log($"New Parameter Value: {currentOutdoorParameterValue}");
 		}
 
 
@@ -64,7 +99,6 @@ namespace Sonigon
 
 
 
-		
 
 		private void Update()
 		{
