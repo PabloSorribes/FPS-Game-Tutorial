@@ -562,7 +562,7 @@ PrefabInstance:
     - target: {fileID: 4751794995193978646, guid: 253d1b6b44bd6874288190819d761e04,
         type: 3}
       propertyPath: m_Name
-      value: AudioReverbZoneManager
+      value: SonigonReverbZoneManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 253d1b6b44bd6874288190819d761e04, type: 3}
@@ -637,7 +637,12 @@ PrefabInstance:
     - target: {fileID: 4751794995193978646, guid: 3fea735f4cadfeb4ba8d8ee40d614b18,
         type: 3}
       propertyPath: m_Name
-      value: AudioMixUpdateHandler
+      value: SonigonDelayNetworkManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5390943853351647791, guid: 3fea735f4cadfeb4ba8d8ee40d614b18,
+        type: 3}
+      propertyPath: m_Name
+      value: SonigonAudioRaycaster
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fea735f4cadfeb4ba8d8ee40d614b18, type: 3}
