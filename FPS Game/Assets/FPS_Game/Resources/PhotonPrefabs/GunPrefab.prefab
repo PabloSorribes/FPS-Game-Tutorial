@@ -88,10 +88,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 574307343262230782}
-  - component: {fileID: 6033509583167210319}
   - component: {fileID: 3167460822558325876}
-  - component: {fileID: 5948939202551032005}
-  - component: {fileID: 6507144715665526331}
+  - component: {fileID: 6033509583167210319}
+  - component: {fileID: 8104725373266505618}
   m_Layer: 0
   m_Name: GunPrefab
   m_TagString: Untagged
@@ -114,28 +113,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6033509583167210319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6321598397176061264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a549d564930c8f045b462dc9d36d84cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemInfo: {fileID: 11400000, guid: faedfac47be255447ae44e48a73a1423, type: 2}
-  itemGameObject: {fileID: 6624754890515334687}
-  bulletImpactPrefab: {fileID: 6521945633980296980, guid: e53c980aac40f714e8037076227eeeec,
-    type: 3}
-  cam: {fileID: 0}
-  delayNetworkSnapshot: {fileID: 5948939202551032005}
-  convolutionSwitcherEvent: {fileID: 6507144715665526331}
-  localEvent: event:/Guns/ExampleGunShot
-  serverEvent: event:/Guns/ExampleGunShot
-  audioRaycaster: {fileID: 0}
 --- !u!114 &3167460822558325876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,7 +135,7 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &5948939202551032005
+--- !u!114 &6033509583167210319
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,21 +144,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 6321598397176061264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Script: {fileID: 11500000, guid: a549d564930c8f045b462dc9d36d84cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: snapshot:/DelayNetwork
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
---- !u!114 &6507144715665526331
+  itemInfo: {fileID: 11400000, guid: faedfac47be255447ae44e48a73a1423, type: 2}
+  itemGameObject: {fileID: 6624754890515334687}
+  bulletImpactPrefab: {fileID: 6521945633980296980, guid: e53c980aac40f714e8037076227eeeec,
+    type: 3}
+  cam: {fileID: 0}
+  gunshotHandler: {fileID: 8104725373266505618}
+--- !u!114 &8104725373266505618
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,20 +162,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6321598397176061264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Script: {fileID: 11500000, guid: fc7280f4fb2946640829aca49a87eb38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/Logic/SnaphotSwitcher
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
+  localEvent: event:/Guns/ExampleGunShot
 --- !u!1 &6624754890515334687
 GameObject:
   m_ObjectHideFlags: 0
