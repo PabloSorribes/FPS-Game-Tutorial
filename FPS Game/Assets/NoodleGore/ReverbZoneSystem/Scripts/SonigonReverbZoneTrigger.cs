@@ -14,8 +14,8 @@ namespace Sonigon
 		[SerializeField]
 		BoxCollider trigger = null;
 
-		//[SerializeField]
-		//PhotonView photonView = null;
+		[SerializeField]
+		PhotonView photonView = null;
 
 		#region Debug
 		[Header("--- DEBUG ---")]
@@ -57,7 +57,7 @@ namespace Sonigon
 		{
 			if (other.CompareTag("Player"))
 			{
-				if (other.GetComponent<PhotonView>().IsMine)
+				if (photonView.IsMine)
 				{
 					Debug.Log($"Local player entered, execute stuff here!");
 
@@ -77,7 +77,7 @@ namespace Sonigon
 		{
 			if (other.CompareTag("Player"))
 			{
-				if (other.GetComponent<PhotonView>().IsMine)
+				if (photonView.IsMine)
 				{
 					Debug.Log($"Local player exited, execute stuff here!");
 
