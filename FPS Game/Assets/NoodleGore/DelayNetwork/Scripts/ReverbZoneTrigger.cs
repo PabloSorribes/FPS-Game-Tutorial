@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sonigon;
 
-public class ReverbZoneHandler : MonoBehaviour
+public class ReverbZoneTrigger : MonoBehaviour
 {
 
-    public 
     public enum ReverbZone
     {
         Default,
@@ -15,7 +14,7 @@ public class ReverbZoneHandler : MonoBehaviour
         Canyon,
         Mountains
     }
-    ReverbZone MyReverb;
+    public ReverbZone MyReverb;
     private void OnTriggerEnter(Collider other)
     {
         
