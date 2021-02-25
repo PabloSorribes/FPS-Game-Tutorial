@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6605915088559755498}
   - component: {fileID: 4007680157094634102}
   m_Layer: 0
-  m_Name: AudioRaycaster
+  m_Name: SonigonAudioRaycaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,4 +58,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 6605915088559755498}
-  maxDistance: 100
+  maxDistance: 65

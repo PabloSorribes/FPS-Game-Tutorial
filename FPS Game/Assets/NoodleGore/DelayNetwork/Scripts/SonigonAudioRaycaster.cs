@@ -5,7 +5,7 @@ namespace Sonigon
 	public class SonigonAudioRaycaster : MonoBehaviour
 	{
 		public SphereCollider sphereCollider;
-		public float maxDistance = 100f;
+		public float maxDistance = 65f;
 
 		public enum AudioReflectionDirection
 		{
