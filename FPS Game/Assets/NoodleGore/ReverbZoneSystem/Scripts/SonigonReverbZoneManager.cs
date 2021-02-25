@@ -15,20 +15,28 @@ namespace Sonigon
 
 		public void AddZone(SoundTagReverbOutdoor zoneInfo)
 		{
+			Debug.Log($"ADD ZONE: {zoneInfo.reverbType} = {(int)zoneInfo.reverbType}");
 			currentTriggerZones.Add(zoneInfo);
 			UpdateReverbSnapshotParameter();
 		}
 
 		public void RemoveZone(SoundTagReverbOutdoor zoneInfo)
 		{
+			Debug.Log($"REMOVE ZONE: {zoneInfo.reverbType} = {(int)zoneInfo.reverbType}");
 			currentTriggerZones.Remove(zoneInfo);
 			UpdateReverbSnapshotParameter();
 		}
 
 		public void UpdateReverbSnapshotParameter()
 		{
+
+			Debug.Log($"Old Parameter Value: {currentParameterValue}");
+
 			currentParameterValue = currentTriggerZones[currentTriggerZones.Count - 1].GetParameterValue();
 			ReverbZoneSnapshotSwitcherEvent.SetParameter("ReverbZone", currentParameterValue);
+
+			Debug.Log($"New Parameter Value: {currentParameterValue}");
+
 		}
 
 

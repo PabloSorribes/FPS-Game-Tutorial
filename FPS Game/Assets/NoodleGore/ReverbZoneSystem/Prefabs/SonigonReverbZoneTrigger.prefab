@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 787634872971224116}
   - component: {fileID: 6787537140238798836}
   m_Layer: 0
-  m_Name: ReverbZone
+  m_Name: SonigonReverbZoneTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,4 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6ec2c3ca3dda5b459f804e98e395b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunshotHandler: {fileID: 0}
+  reverbTag: {fileID: 0}
+  trigger: {fileID: 787634872971224116}
+  debugColor: {r: 0, g: 1, b: 1, a: 1}
+  debugAlpha: 0.2

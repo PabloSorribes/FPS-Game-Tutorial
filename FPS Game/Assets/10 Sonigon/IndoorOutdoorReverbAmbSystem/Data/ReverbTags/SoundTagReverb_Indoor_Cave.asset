@@ -10,5 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e731acf01a687a4fa7108190234a244, type: 3}
-  m_Name: SoundTagReverb_Outdoor_Forest
+  m_Name: SoundTagReverb_Indoor_Cave
   m_EditorClassIdentifier: 
+  reverbType: 1
