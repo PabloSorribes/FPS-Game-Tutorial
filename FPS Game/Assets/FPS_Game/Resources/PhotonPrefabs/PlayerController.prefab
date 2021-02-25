@@ -466,6 +466,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1488053957094389952}
+    - target: {fileID: 6033509583167210319, guid: 83c8c3d9b2b10b84baa2ee46f16ddb5a,
+        type: 3}
+      propertyPath: snapshotvent
+      value: event:/Logic/SnaphotSwitcher
+      objectReference: {fileID: 0}
     - target: {fileID: 6321598397176061264, guid: 83c8c3d9b2b10b84baa2ee46f16ddb5a,
         type: 3}
       propertyPath: m_Name

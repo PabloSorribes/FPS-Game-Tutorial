@@ -10,13 +10,18 @@ public class SingleShotGun : Gun
 	[Header("--- AUDIO --- ")]
 	[SerializeField]
 	private StudioEventEmitter snapshotEmitter = null;
+    [SerializeField]
+    private StudioEventEmitter snapshotEvent= null;
 
-	[FMODUnity.EventRef]
+
+    [FMODUnity.EventRef]
 	public string localEvent;
 	[FMODUnity.EventRef]
 	public string serverEvent;
 
-	[SerializeField]
+  
+
+    [SerializeField]
 	private AudioRaycaster audioRaycaster = null;
 
 
@@ -27,6 +32,7 @@ public class SingleShotGun : Gun
 		PV = GetComponent<PhotonView>();
 
 		snapshotEmitter.Play();
+        snapshotEvent.Play();
 	}
 
 	public override void Use()
@@ -50,15 +56,19 @@ public class SingleShotGun : Gun
 			UpdateShotReverb();
 			currentIntervalTime = 0f;
 
-			Debug.Log($"UPDATE Reverb");
-		}
+            // Debug.Log($"UPDATE triggered.");
+            
 
-	}
+        }
+
+        HandleReverbZones();
+    }
 
 	void Shoot()
 	{
-		// Play Shoot Sound for local player
-		FMODUnity.RuntimeManager.PlayOneShot(localEvent, transform.position);
+       
+        // Play Shoot Sound for local player
+        FMODUnity.RuntimeManager.PlayOneShot(localEvent, transform.position);
 
 		// Send out event to play the SEPARATE server shoot sound on everyone else's computer.
 		PV.RPC(nameof(RPC_ServerShootAudio), RpcTarget.Others);
@@ -92,4 +102,38 @@ public class SingleShotGun : Gun
 		instance.setParameterByName("Delay_BackLeft", backLeftHitDistance);
 		instance.setParameterByName("Delay_BackRight", backRightHitDistance);
 	}
+
+    private void HandleReverbZones()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            snapshotEvent.SetParameter("ReverbZone", 0);
+            Debug.Log("reverb set:  Default");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            snapshotEvent.SetParameter("ReverbZone", 1);
+            Debug.Log("reverb set:  IndoorCave");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            snapshotEvent.SetParameter("ReverbZone", 2);
+            Debug.Log("reverb set:  IndoorShip");
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            snapshotEvent.SetParameter("ReverbZone", 3);
+            Debug.Log("reverb set:  OutdoorCanyon");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            snapshotEvent.SetParameter("ReverbZone", 4);
+            Debug.Log("reverb set:  OutdoorMountains");
+        }
+    }
 }

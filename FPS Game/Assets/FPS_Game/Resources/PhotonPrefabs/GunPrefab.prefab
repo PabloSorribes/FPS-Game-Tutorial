@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 6033509583167210319}
   - component: {fileID: 3167460822558325876}
   - component: {fileID: 5948939202551032005}
+  - component: {fileID: 6507144715665526331}
   m_Layer: 0
   m_Name: GunPrefab
   m_TagString: Untagged
@@ -129,11 +130,12 @@ MonoBehaviour:
   itemGameObject: {fileID: 6624754890515334687}
   bulletImpactPrefab: {fileID: 6521945633980296980, guid: e53c980aac40f714e8037076227eeeec,
     type: 3}
-  snapshotEmitter: {fileID: 5948939202551032005}
-  localEvent: event:/ExampleGunShot
-  serverEvent: event:/ServerGunshot
-  audioRaycaster: {fileID: 0}
   cam: {fileID: 0}
+  snapshotEmitter: {fileID: 5948939202551032005}
+  snapshotEvent: {fileID: 6507144715665526331}
+  localEvent: event:/Guns/ExampleGunShot
+  serverEvent: event:/Guns/ExampleGunShot
+  audioRaycaster: {fileID: 0}
 --- !u!114 &3167460822558325876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +172,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionTag: 
   Event: snapshot:/DelayNetwork
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &6507144715665526331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6321598397176061264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Logic/SnaphotSwitcher
   PlayEvent: 0
   StopEvent: 0
   AllowFadeout: 1

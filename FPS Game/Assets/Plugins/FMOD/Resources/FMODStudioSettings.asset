@@ -288,8 +288,9 @@ MonoBehaviour:
   RealChannelSettings: []
   Plugins: []
   MasterBanks:
-  - Desktop/Master
-  Banks: []
+  - Master
+  Banks:
+  - Logic
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

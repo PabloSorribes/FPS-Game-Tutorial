@@ -94,7 +94,7 @@ public class AudioRaycaster : MonoBehaviour
             //Debug.Log("Tag for this collider (if any) is " + hit.transform.tag);
             //Debug.DrawRay(origin, finalWorldDirection * distanceToObstacle, debugColor, 5f);
 
-         Debug.Log($"Direction: {reflectionDirection} | Distance to Obstacle: {distanceToObstacle}");
+        // Debug.Log($"Direction: {reflectionDirection} | Distance to Obstacle: {distanceToObstacle}");
 
         
 
