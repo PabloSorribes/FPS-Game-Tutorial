@@ -11,6 +11,7 @@ namespace Sonigon
 		BoxCollider trigger = null;
 
 		#region Debug
+		[Header("--- DEBUG ---")]
 		[SerializeField]
 		Color debugColor = Color.cyan;
 
