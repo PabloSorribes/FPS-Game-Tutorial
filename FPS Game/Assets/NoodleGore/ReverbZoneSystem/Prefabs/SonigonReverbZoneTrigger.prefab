@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 9037154157903115965}
   - component: {fileID: 787634872971224116}
   - component: {fileID: 6787537140238798836}
+  - component: {fileID: 7574600711552195895}
+  - component: {fileID: 1861915246160878706}
   m_Layer: 0
   m_Name: SonigonReverbZoneTrigger
   m_TagString: Untagged
@@ -57,7 +59,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6ec2c3ca3dda5b459f804e98e395b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 0}
   reverbTag: {fileID: 0}
   trigger: {fileID: 787634872971224116}
   debugColor: {r: 0, g: 1, b: 1, a: 1}
   debugAlpha: 0.2
+--- !u!23 &7574600711552195895
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900030069672111139}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 58cd3c9eb5b43a84ead2c4f2bf3b5690, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1861915246160878706
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900030069672111139}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
