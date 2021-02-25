@@ -5538,6 +5538,11 @@ PrefabInstance:
       propertyPath: debugColor.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7574600711552195895, guid: 107ef049be9835f4887a2b95848aa5f7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9037154157903115965, guid: 107ef049be9835f4887a2b95848aa5f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7153,6 +7158,11 @@ PrefabInstance:
     - target: {fileID: 6787537140238798836, guid: 107ef049be9835f4887a2b95848aa5f7,
         type: 3}
       propertyPath: debugColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574600711552195895, guid: 107ef049be9835f4887a2b95848aa5f7,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9037154157903115965, guid: 107ef049be9835f4887a2b95848aa5f7,

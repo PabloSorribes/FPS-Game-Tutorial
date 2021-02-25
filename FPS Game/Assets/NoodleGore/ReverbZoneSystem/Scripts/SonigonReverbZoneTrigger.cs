@@ -5,41 +5,44 @@ namespace Sonigon
 	public class SonigonReverbZoneTrigger : MonoBehaviour
 	{
         [SerializeField]
-        MeshRenderer meshRenderer;
-
-        [SerializeField]
-		SoundTagReverbOutdoor reverbTag = null;
+		SoundTagReverbBase reverbTag = null;
 
 		[SerializeField]
 		BoxCollider trigger = null;
 
+		#region Debug
 		[SerializeField]
 		Color debugColor = Color.cyan;
+
+		[SerializeField]
+		Material debugMaterial = null;
 
         [SerializeField]
         [Range(0,1)]
 		float debugAlpha = 0.2f;
+		#endregion Debug
 
 		SonigonReverbZoneManager sonigonReverbZoneManager;
 
-        private void Awake()
-        {
-            meshRenderer.enabled = false;
-        }
         private void Start()
 		{
 			sonigonReverbZoneManager = FindObjectOfType<SonigonReverbZoneManager>();
 
-            meshRenderer.enabled = true;        // enable/disable this with a key
+			var meshRenderer = gameObject.AddComponent<MeshRenderer>();
+			meshRenderer.enabled = true;
+
+			Material material = new Material(debugMaterial);
 			Color debugColorTemp = new Color(debugColor.r, debugColor.g, debugColor.b, debugAlpha);
-            meshRenderer.material.color = debugColorTemp;
+
+			material.color = debugColorTemp;
+            meshRenderer.material = material;
 		}
 
 		private void OnTriggerEnter(Collider other)
 		{
 			if (other.CompareTag("Player"))
 			{
-				sonigonReverbZoneManager.AddZone(this.reverbTag);
+				sonigonReverbZoneManager.AddOutdoorZone(this.reverbTag);
 			}
 		}
 
@@ -47,7 +50,7 @@ namespace Sonigon
 		{
 			if (other.CompareTag("Player"))
 			{
-				sonigonReverbZoneManager.RemoveZone(this.reverbTag);
+				sonigonReverbZoneManager.RemoveOutdoorZone(this.reverbTag);
 			}
 		}
 

@@ -2,30 +2,10 @@
 
 namespace Sonigon
 {
-	public class SoundTagReverbBase : ScriptableObject
+	public abstract class SoundTagReverbBase : SoundTagBase
 	{
+		public SoundReflection soundReflection;
 
-		// Managed Name
-		[System.NonSerialized]
-		protected string cachedName;
-		public virtual string GetName()
-		{
-			if (Application.isPlaying)
-			{
-				if (cachedName == null)
-				{
-					cachedName = name;
-				}
-				return cachedName;
-			}
-			else
-			{
-				return name;
-			}
-		}
-
-
-
-
+		public abstract int GetParameterValue();
 	}
 }

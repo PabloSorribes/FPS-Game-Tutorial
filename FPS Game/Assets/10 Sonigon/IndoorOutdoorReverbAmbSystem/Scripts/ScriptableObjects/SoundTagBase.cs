@@ -2,7 +2,7 @@
 
 namespace Sonigon
 {
-	public class SoundTagBase : ScriptableObject
+	public abstract class SoundTagBase : ScriptableObject
 	{
 
 		// Managed Name
@@ -23,12 +23,5 @@ namespace Sonigon
 				return name;
 			}
 		}
-
-
-		public void GetAudioManager()
-		{
-
-		}
-
 	}
 }

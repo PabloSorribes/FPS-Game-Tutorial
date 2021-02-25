@@ -7,47 +7,55 @@ namespace Sonigon
 	public class SonigonReverbZoneManager : MonoBehaviour
 	{
 		[SerializeField]
-		private StudioEventEmitter ReverbZoneSnapshotSwitcherEvent = null;
+		private StudioEventEmitter reverbSnapshotSwitcher_Indoor = null;
+		[SerializeField]
+		private StudioEventEmitter reverbSnapshotSwitcher_Outdoor = null;
 
 		[SerializeField]
-		private List<SoundTagReverbOutdoor> currentTriggerZones = new List<SoundTagReverbOutdoor>();
-		private int currentParameterValue = 0;
+		private List<SoundTagReverbBase> currentTriggerZones_Indoor = new List<SoundTagReverbBase>();
+		private int currentIndoorParameterValue = 0;
+
+		[SerializeField]
+		private List<SoundTagReverbBase> currentTriggerZones_Outdoor = new List<SoundTagReverbBase>();
+		private int currentOutdoorParameterValue = 0;
+
 
 		void Awake()
 		{
-			ReverbZoneSnapshotSwitcherEvent.Play();
+			reverbSnapshotSwitcher_Indoor.Play();
+			reverbSnapshotSwitcher_Outdoor.Play();
 		}
 
-		public void AddZone(SoundTagReverbOutdoor zoneInfo)
+		public void AddOutdoorZone(SoundTagReverbBase zoneInfo)
 		{
-			Debug.Log($"ADD ZONE: {zoneInfo.reverbType} = {(int)zoneInfo.reverbType}");
-			currentTriggerZones.Add(zoneInfo);
+			//Debug.Log($"ADD ZONE: {zoneInfo.reverbType} = {(int)zoneInfo.reverbType}");
+			currentTriggerZones_Outdoor.Add(zoneInfo);
 			UpdateReverbSnapshotParameter();
 		}
 
-		public void RemoveZone(SoundTagReverbOutdoor zoneInfo)
+		public void RemoveOutdoorZone(SoundTagReverbBase zoneInfo)
 		{
-			Debug.Log($"REMOVE ZONE: {zoneInfo.reverbType} = {(int)zoneInfo.reverbType}");
-			currentTriggerZones.Remove(zoneInfo);
+			//Debug.Log($"REMOVE ZONE: {zoneInfo.reverbType} = {(int)zoneInfo.reverbType}");
+			currentTriggerZones_Outdoor.Remove(zoneInfo);
 			UpdateReverbSnapshotParameter();
 		}
 
 		public void UpdateReverbSnapshotParameter()
 		{
-			Debug.Log($"Old Parameter Value: {currentParameterValue}");
+			Debug.Log($"Old Parameter Value: {currentOutdoorParameterValue}");
 
 			// Reset to default if no entries left in the list.
-			if (currentTriggerZones.Count == 0)
+			if (currentTriggerZones_Outdoor.Count == 0)
 			{
-				currentParameterValue = 0;
+				currentOutdoorParameterValue = 0;
 			}
 			else
 			{
-				currentParameterValue = currentTriggerZones[currentTriggerZones.Count - 1].GetParameterValue();
+				currentOutdoorParameterValue = currentTriggerZones_Outdoor[currentTriggerZones_Outdoor.Count - 1].GetParameterValue();
 			}
 
-			ReverbZoneSnapshotSwitcherEvent.SetParameter("ReverbZone", currentParameterValue);
-			Debug.Log($"New Parameter Value: {currentParameterValue}");
+			reverbSnapshotSwitcher_Outdoor.SetParameter("ReverbZone", currentOutdoorParameterValue);
+			Debug.Log($"New Parameter Value: {currentOutdoorParameterValue}");
 		}
 
 
@@ -67,32 +75,32 @@ namespace Sonigon
 		{
 			if (Input.GetKeyDown(KeyCode.Alpha4))
 			{
-				ReverbZoneSnapshotSwitcherEvent.SetParameter("ReverbZone", 0);
+				reverbSnapshotSwitcher_Outdoor.SetParameter("ReverbZone", 0);
 				Debug.Log("reverb set:  Default");
 			}
 
 			if (Input.GetKeyDown(KeyCode.Alpha5))
 			{
-				ReverbZoneSnapshotSwitcherEvent.SetParameter("ReverbZone", 1);
+				reverbSnapshotSwitcher_Outdoor.SetParameter("ReverbZone", 1);
 				Debug.Log("reverb set:  IndoorCave");
 			}
 
 			if (Input.GetKeyDown(KeyCode.Alpha6))
 			{
-				ReverbZoneSnapshotSwitcherEvent.SetParameter("ReverbZone", 2);
+				reverbSnapshotSwitcher_Outdoor.SetParameter("ReverbZone", 2);
 				Debug.Log("reverb set:  IndoorShip");
 			}
 
 
 			if (Input.GetKeyDown(KeyCode.Alpha7))
 			{
-				ReverbZoneSnapshotSwitcherEvent.SetParameter("ReverbZone", 3);
+				reverbSnapshotSwitcher_Outdoor.SetParameter("ReverbZone", 3);
 				Debug.Log("reverb set:  OutdoorCanyon");
 			}
 
 			if (Input.GetKeyDown(KeyCode.Alpha8))
 			{
-				ReverbZoneSnapshotSwitcherEvent.SetParameter("ReverbZone", 4);
+				reverbSnapshotSwitcher_Outdoor.SetParameter("ReverbZone", 4);
 				Debug.Log("reverb set:  OutdoorMountains");
 			}
 		}
