@@ -34,6 +34,13 @@ public class AudioGunshotHandler : MonoBehaviour
 	[PunRPC]
 	private void RPC_ServerShootAudio()
 	{
-		FMODUnity.RuntimeManager.PlayOneShot(localEvent, transform.position);
+		if (photonView.IsMine)
+		{
+			// Perform stuff here that should only be executed locally
+		}
+		else
+		{
+			FMODUnity.RuntimeManager.PlayOneShot(localEvent, transform.position);
+		}
 	}
 }
