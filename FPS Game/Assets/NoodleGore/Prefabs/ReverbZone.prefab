@@ -57,3 +57,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6ec2c3ca3dda5b459f804e98e395b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunshotHandler: {fileID: 0}
