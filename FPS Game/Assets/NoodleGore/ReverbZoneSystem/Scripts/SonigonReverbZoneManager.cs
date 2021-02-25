@@ -19,28 +19,11 @@ namespace Sonigon
 		private List<SoundTagReverbBase> currentTriggerZones_Outdoor = new List<SoundTagReverbBase>();
 		private int currentOutdoorParameterValue = 0;
 
-		[SerializeField]
-		private Photon.Pun.PhotonView photonView = null;
-		public Photon.Pun.PhotonView PhotonView => photonView;
 
 		void Awake()
 		{
 			reverbSnapshotSwitcher_Indoor.Play();
 			reverbSnapshotSwitcher_Outdoor.Play();
-		}
-
-		private void Start()
-		{
-			if (PhotonView.IsMine)
-			{
-				var triggers = FindObjectsOfType<SonigonReverbZoneTrigger>();
-				foreach (var trigger in triggers)
-				{
-					trigger.SetReverbZoneManager(this);
-				}
-
-				Debug.Log($"Set manager for {triggers.Length} triggers.");
-			}
 		}
 
 		public void AddIndoorZone(SoundTagReverbBase zoneInfo)

@@ -14,7 +14,8 @@ namespace Sonigon
 		[SerializeField]
 		BoxCollider trigger = null;
 
-		private SonigonReverbZoneManager reverbZoneManager;
+		//[SerializeField]
+		//PhotonView photonView = null;
 
 		#region Debug
 		[Header("--- DEBUG ---")]
@@ -40,11 +41,6 @@ namespace Sonigon
 		//	}
 		//}
 
-		public void SetReverbZoneManager(SonigonReverbZoneManager reverbZoneManager)
-		{
-			this.reverbZoneManager = reverbZoneManager;
-		}
-
 		private void Start()
 		{
 			var meshRenderer = gameObject.AddComponent<MeshRenderer>();
@@ -61,9 +57,10 @@ namespace Sonigon
 		{
 			if (other.CompareTag("Player"))
 			{
-				if (reverbZoneManager.PhotonView.IsMine)
+				if (other.GetComponent<PhotonView>().IsMine)
 				{
 					Debug.Log($"Local player entered, execute stuff here!");
+
 
 					var sonigonReverbZoneManager = other.GetComponentInChildren<SonigonReverbZoneManager>();
 
@@ -80,7 +77,7 @@ namespace Sonigon
 		{
 			if (other.CompareTag("Player"))
 			{
-				if (reverbZoneManager.PhotonView.IsMine)
+				if (other.GetComponent<PhotonView>().IsMine)
 				{
 					Debug.Log($"Local player exited, execute stuff here!");
 

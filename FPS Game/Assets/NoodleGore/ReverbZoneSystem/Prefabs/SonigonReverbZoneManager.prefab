@@ -49,7 +49,6 @@ MonoBehaviour:
   reverbSnapshotSwitcher_Outdoor: {fileID: 4843950085412233993}
   currentTriggerZones_Indoor: []
   currentTriggerZones_Outdoor: []
-  photonView: {fileID: 0}
 --- !u!114 &7178375284180327908
 MonoBehaviour:
   m_ObjectHideFlags: 0
