@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 787634872971224116}
   - component: {fileID: 6787537140238798836}
   - component: {fileID: 1861915246160878706}
-  - component: {fileID: 988839279128027431}
   m_Layer: 0
   m_Name: SonigonReverbZoneTrigger
   m_TagString: Untagged
@@ -59,10 +58,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6ec2c3ca3dda5b459f804e98e395b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isIndoor: 0
   reverbTag: {fileID: 0}
   trigger: {fileID: 787634872971224116}
-  photonView: {fileID: 988839279128027431}
   debugColor: {r: 0, g: 1, b: 1, a: 1}
   debugMaterial: {fileID: 2100000, guid: f7c23e55e5f773f4c9c07de7e693e59f, type: 2}
   debugAlpha: 0.2
@@ -74,25 +71,3 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900030069672111139}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &988839279128027431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900030069672111139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 0
-  OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
-  viewIdField: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
