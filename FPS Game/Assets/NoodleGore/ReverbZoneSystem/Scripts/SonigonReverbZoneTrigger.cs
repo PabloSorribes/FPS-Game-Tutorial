@@ -26,12 +26,19 @@ namespace Sonigon
 		float debugAlpha = 0.2f;
 		#endregion Debug
 
-		SonigonReverbZoneManager sonigonReverbZoneManager;
+		//SonigonReverbZoneManager sonigonReverbZoneManager;
+		//SonigonReverbZoneManager SonigonReverbZoneManager
+		//{
+		//	get
+		//	{
+		//		if (sonigonReverbZoneManager == null)
+		//			sonigonReverbZoneManager = FindObjectOfType<SonigonReverbZoneManager>();
+		//		return sonigonReverbZoneManager;
+		//	}
+		//}
 
 		private void Start()
 		{
-			sonigonReverbZoneManager = FindObjectOfType<SonigonReverbZoneManager>();
-
 			var meshRenderer = gameObject.AddComponent<MeshRenderer>();
 			meshRenderer.enabled = true;
 
@@ -46,6 +53,9 @@ namespace Sonigon
 		{
 			if (other.CompareTag("Player"))
 			{
+				var sonigonReverbZoneManager = other.GetComponentInChildren<SonigonReverbZoneManager>();
+
+
 				if (isIndoor)
 					sonigonReverbZoneManager.AddIndoorZone(this.reverbTag);
 				else
@@ -57,6 +67,8 @@ namespace Sonigon
 		{
 			if (other.CompareTag("Player"))
 			{
+				var sonigonReverbZoneManager = other.GetComponentInChildren<SonigonReverbZoneManager>();
+
 				if (isIndoor)
 					sonigonReverbZoneManager.RemoveIndoorZone(this.reverbTag);
 				else
