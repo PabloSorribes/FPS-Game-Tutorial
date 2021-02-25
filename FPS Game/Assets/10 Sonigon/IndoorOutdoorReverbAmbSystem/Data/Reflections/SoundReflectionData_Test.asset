@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e731acf01a687a4fa7108190234a244, type: 3}
-  m_Name: SoundTagReverb_Outdoor_Canyon
+  m_Script: {fileID: 11500000, guid: 7660f39b73229ae49914c3a4249de888, type: 3}
+  m_Name: SoundReflectionData_Test
   m_EditorClassIdentifier: 
-  reverbType: 3
-  soundReflection: {fileID: 11400000, guid: c88a5c1ae8d7f764ea0f719f48b283eb, type: 2}
+  reflectionEvent: event:/Guns/GunReflection_Test

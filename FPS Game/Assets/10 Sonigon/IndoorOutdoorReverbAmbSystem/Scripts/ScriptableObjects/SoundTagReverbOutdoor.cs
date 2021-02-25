@@ -19,5 +19,7 @@ namespace Sonigon
 		public ReverbZone reverbType;
 
 		public int GetParameterValue() => (int)reverbType;
+
+		public SoundReflection soundReflection;
 	}
 }
