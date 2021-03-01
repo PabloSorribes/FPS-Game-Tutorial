@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e731acf01a687a4fa7108190234a244, type: 3}
   m_Name: SoundTagReverb_Outdoor_01_Canyon
   m_EditorClassIdentifier: 
-  soundReflection: {fileID: 0}
+  soundReflectionData: {fileID: 0}
+  isIndoor: 0
   reverbType: 1

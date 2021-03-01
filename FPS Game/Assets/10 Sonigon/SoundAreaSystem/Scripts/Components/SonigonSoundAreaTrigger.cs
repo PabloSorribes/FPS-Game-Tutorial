@@ -3,23 +3,20 @@ using Photon.Pun;
 
 namespace Sonigon
 {
-	public class SonigonReverbZoneTrigger : MonoBehaviour
+	public class SonigonSoundAreaTrigger : MonoBehaviour
 	{
 		[SerializeField]
-		private bool isIndoor = false;
-
-		[SerializeField]
 		SoundTagReverbBase reverbTag = null;
-
-		[SerializeField]
-		BoxCollider trigger = null;
-
-		//[SerializeField]
-		//PhotonView photonView = null;
 
 #if UNITY_EDITOR || UNITY_DEVELOPMENT
 
 		[Header("--- DEBUG ---")]
+		[SerializeField]
+		bool showInGame = false;
+
+		[SerializeField]
+		BoxCollider trigger = null;
+
 		[SerializeField]
 		Color debugColor = Color.cyan;
 
@@ -27,23 +24,9 @@ namespace Sonigon
 		Material debugMaterial = null;
 
         [SerializeField]
-        bool showInGame = false;
-
-        [SerializeField]
 		[Range(0, 1)]
 		float debugAlpha = 0.2f;
 #endif
-
-		//SonigonReverbZoneManager sonigonReverbZoneManager;
-		//SonigonReverbZoneManager SonigonReverbZoneManager
-		//{
-		//	get
-		//	{
-		//		if (sonigonReverbZoneManager == null)
-		//			sonigonReverbZoneManager = FindObjectOfType<SonigonReverbZoneManager>();
-		//		return sonigonReverbZoneManager;
-		//	}
-		//}
 
 		private void Start()
 		{
@@ -71,9 +54,9 @@ namespace Sonigon
 					Debug.Log($"Local player entered, execute stuff here!");
 
 
-					var sonigonReverbZoneManager = other.GetComponentInChildren<SonigonReverbZoneManager>();
+					var sonigonReverbZoneManager = other.GetComponentInChildren<SonigonSoundAreaManager>();
 
-					if (isIndoor)
+					if (reverbTag.IsIndoor)
 						sonigonReverbZoneManager.AddIndoorZone(this.reverbTag);
 					else
 						sonigonReverbZoneManager.AddOutdoorZone(this.reverbTag);
@@ -91,9 +74,9 @@ namespace Sonigon
 					Debug.Log($"Local player exited, execute stuff here!");
 
 
-					var sonigonReverbZoneManager = other.GetComponentInChildren<SonigonReverbZoneManager>();
+					var sonigonReverbZoneManager = other.GetComponentInChildren<SonigonSoundAreaManager>();
 
-					if (isIndoor)
+					if (reverbTag.IsIndoor)
 						sonigonReverbZoneManager.RemoveIndoorZone(this.reverbTag);
 					else
 						sonigonReverbZoneManager.RemoveOutdoorZone(this.reverbTag);

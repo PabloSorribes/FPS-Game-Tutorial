@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33d305d393234c4db43978369c5b012, type: 3}
   m_Name: SoundWeaponSettingsData_Gun
   m_EditorClassIdentifier: 
-  weaponShotEvent: 
-  reflectionIntensity: 1
+  weaponShotEvent: event:/Guns/ExampleGunShot
+  enableReflections: 1
+  reflectionVolumeDB: 0

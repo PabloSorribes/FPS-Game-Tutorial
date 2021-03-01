@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Sonigon
 {
-	public class SonigonReverbZoneManager : MonoBehaviour
+	public class SonigonSoundAreaManager : MonoBehaviour
 	{
 		[SerializeField]
 		private StudioEventEmitter reverbSnapshotSwitcher_Indoor = null;

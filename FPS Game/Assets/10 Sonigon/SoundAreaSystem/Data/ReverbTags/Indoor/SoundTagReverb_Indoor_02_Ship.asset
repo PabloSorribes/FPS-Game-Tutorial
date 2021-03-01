@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05137effe9c78243947fe95e34ff365, type: 3}
   m_Name: SoundTagReverb_Indoor_02_Ship
   m_EditorClassIdentifier: 
-  soundReflection: {fileID: 0}
+  soundReflectionData: {fileID: 0}
+  isIndoor: 1
   reverbType: 2
