@@ -14,15 +14,14 @@ namespace Sonigon
 		[SerializeField]
 		BoxCollider trigger = null;
 
+		//[SerializeField]
+		//PhotonView photonView = null;
 
-        //[SerializeField]
-        //PhotonView photonView = null;
+#if UNITY_EDITOR || UNITY_DEVELOPMENT
 
-        #region Debug
-        [Header("--- DEBUG ---")]
+		[Header("--- DEBUG ---")]
 		[SerializeField]
 		Color debugColor = Color.cyan;
-
 
         [SerializeField]
 		Material debugMaterial = null;
@@ -33,7 +32,7 @@ namespace Sonigon
         [SerializeField]
 		[Range(0, 1)]
 		float debugAlpha = 0.2f;
-		#endregion Debug
+#endif
 
 		//SonigonReverbZoneManager sonigonReverbZoneManager;
 		//SonigonReverbZoneManager SonigonReverbZoneManager
@@ -48,7 +47,8 @@ namespace Sonigon
 
 		private void Start()
 		{
-            if(showInGame)
+#if UNITY_EDITOR || UNITY_DEVELOPMENT
+			if (showInGame)
             {
 			    var meshRenderer = gameObject.AddComponent<MeshRenderer>();
 			    meshRenderer.enabled = true;
@@ -59,6 +59,7 @@ namespace Sonigon
 			    material.color = debugColorTemp;
 			    meshRenderer.material = material;
             }
+#endif
 		}
 
 		private void OnTriggerEnter(Collider other)
@@ -100,6 +101,8 @@ namespace Sonigon
 			}
 		}
 
+
+#if UNITY_EDITOR || UNITY_DEVELOPMENT
 		private void OnDrawGizmos()
 		{
 			Color debugColorTemp = new Color(debugColor.r, debugColor.g, debugColor.b, debugAlpha);
@@ -107,5 +110,6 @@ namespace Sonigon
 			Gizmos.matrix = transform.localToWorldMatrix;
 			Gizmos.DrawCube(trigger.center, trigger.size);
 		}
+#endif
 	}
 }
