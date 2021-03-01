@@ -5,7 +5,7 @@ namespace Sonigon
 
 	[System.Serializable]
 	[CreateAssetMenu(fileName = "SoundTagAmb_Outdoor_", menuName = "Sonigon/SoundTagAmb_Outdoor", order = 5)]
-	public class SoundTagAmbOutdoor : SoundTagBase
+	public class SoundTagAmbOutdoor : SoundTagAmbBase
 	{
 		public enum AmbienceZone
 		{
@@ -16,7 +16,7 @@ namespace Sonigon
 
 		public AmbienceZone ambienceZone;
 
-		public int GetAmbience()
+		public override int GetParameterValue()
 		{
 			return (int)ambienceZone;
 		}

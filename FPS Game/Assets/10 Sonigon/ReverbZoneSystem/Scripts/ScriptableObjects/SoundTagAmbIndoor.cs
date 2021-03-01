@@ -5,12 +5,20 @@ namespace Sonigon
 
 	[System.Serializable]
 	[CreateAssetMenu(fileName = "SoundTagAmb_Indoor_", menuName = "Sonigon/SoundTagAmbIndoor", order = 5)]
-	public class SoundTagAmbIndoor : SoundTagBase
+	public class SoundTagAmbIndoor : SoundTagAmbBase
 	{
-		[SerializeField]
-		[FMODUnity.EventRef]
-		private string indoorAmbienceEvent = null;
+		public enum AmbienceZone
+		{
+			Forest,
+			Urban,
+			Field
+		}
 
-		public string IndoorAmbienceEvent => indoorAmbienceEvent;
+		public AmbienceZone ambienceZone;
+
+		public override int GetParameterValue()
+		{
+			return (int)ambienceZone;
+		}
 	}
 }
