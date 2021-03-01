@@ -9,7 +9,8 @@ namespace Sonigon
 	{
 		[FMODUnity.EventRef]
 		[SerializeField]
-		private string reflectionEvent;
+		private string reflectionEvent = null;
+		public string ReflectionEvent => reflectionEvent;
 
 	}
 }
