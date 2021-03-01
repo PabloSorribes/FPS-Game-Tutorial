@@ -7,6 +7,8 @@ public class AudioGunshotHandler : MonoBehaviour
 {
 	[FMODUnity.EventRef]
 	public string localEvent;
+	[FMODUnity.EventRef]
+	public string debugEvent;
 
 	PhotonView photonView;
 
@@ -37,6 +39,8 @@ public class AudioGunshotHandler : MonoBehaviour
 		if (photonView.IsMine)
 		{
 			// Perform stuff here that should only be executed locally
+			FMODUnity.RuntimeManager.PlayOneShot(debugEvent, transform.position);
+
 		}
 		else
 		{

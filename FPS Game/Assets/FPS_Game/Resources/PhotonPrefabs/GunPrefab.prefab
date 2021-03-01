@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localEvent: event:/Guns/ExampleGunShot
+  debugEvent: event:/Guns/DebugSound_GunShot (dagnv_fire)
 --- !u!1 &6624754890515334687
 GameObject:
   m_ObjectHideFlags: 0
