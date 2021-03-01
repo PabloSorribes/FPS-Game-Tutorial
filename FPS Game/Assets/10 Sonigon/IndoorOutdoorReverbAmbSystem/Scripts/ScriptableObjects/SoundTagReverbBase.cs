@@ -4,7 +4,7 @@ namespace Sonigon
 {
 	public abstract class SoundTagReverbBase : SoundTagBase
 	{
-		public SoundReflection soundReflection;
+		public SoundReflectionData soundReflection;
 
 		public abstract int GetParameterValue();
 	}

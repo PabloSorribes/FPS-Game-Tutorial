@@ -5,7 +5,7 @@ namespace Sonigon
 
 	[System.Serializable]
 	[CreateAssetMenu(fileName = "SoundReflection_", menuName = "Sonigon/SoundReflection", order = 5)]
-	public class SoundReflection : ScriptableObject
+	public class SoundReflectionData : ScriptableObject
 	{
 		[FMODUnity.EventRef]
 		[SerializeField]
