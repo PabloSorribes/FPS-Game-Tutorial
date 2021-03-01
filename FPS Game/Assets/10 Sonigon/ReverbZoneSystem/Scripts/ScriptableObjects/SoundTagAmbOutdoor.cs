@@ -7,14 +7,15 @@ namespace Sonigon
 	[CreateAssetMenu(fileName = "SoundTagAmb_Outdoor_", menuName = "Sonigon/SoundTagAmb_Outdoor", order = 5)]
 	public class SoundTagAmbOutdoor : SoundTagAmbBase
 	{
-		public enum AmbienceZone
+		public enum AmbienceZoneOutdoor
 		{
-			Forest,
-			Urban,
-			Field
+			Default = 0,
+			Forest = 1,
+			Urban = 2,
+			Field = 3,
 		}
 
-		public AmbienceZone ambienceZone;
+		public AmbienceZoneOutdoor ambienceZone;
 
 		public override int GetParameterValue()
 		{

@@ -1,11 +1,10 @@
-﻿using UnityEngine;
-
-namespace Sonigon
+﻿namespace Sonigon
 {
-	public abstract class SoundTagAmbBase : SoundTagBase
+	public abstract class SoundTagAmbBase : SoundTagBase, ISoundDataParameter
 	{
-		public SoundReflectionData soundReflection;
-
-		public abstract int GetParameterValue();
+		public virtual int GetParameterValue()
+		{
+			throw new System.NotImplementedException();
+		}
 	}
 }

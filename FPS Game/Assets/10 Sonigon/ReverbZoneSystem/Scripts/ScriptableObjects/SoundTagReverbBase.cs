@@ -1,9 +1,14 @@
-﻿using UnityEngine;
-
-namespace Sonigon
+﻿namespace Sonigon
 {
-	public abstract class SoundTagReverbBase : SoundTagBase
+	public abstract class SoundTagReverbBase : SoundTagBase, ISoundDataParameter
 	{
-		public abstract int GetParameterValue();
+		[UnityEngine.SerializeField]
+		private SoundReflectionData soundReflectionData = null;
+		public SoundReflectionData SoundReflectionData => soundReflectionData;
+
+		public virtual int GetParameterValue()
+		{
+			throw new System.NotImplementedException();
+		}
 	}
 }
