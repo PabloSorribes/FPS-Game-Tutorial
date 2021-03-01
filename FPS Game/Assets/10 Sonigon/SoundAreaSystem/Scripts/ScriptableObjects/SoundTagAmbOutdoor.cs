@@ -17,7 +17,7 @@ namespace Sonigon
 
 		public AmbienceZoneOutdoor ambienceZone;
 
-		public override int GetParameterValue()
+		public override int GetIntParameterValue()
 		{
 			return (int)ambienceZone;
 		}

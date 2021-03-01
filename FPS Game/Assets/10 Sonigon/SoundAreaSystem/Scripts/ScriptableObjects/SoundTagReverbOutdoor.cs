@@ -18,6 +18,6 @@ namespace Sonigon
 
 		public ReverbZone_Outside reverbType;
 
-		public override int GetParameterValue() => (int)reverbType;
+		public override int GetIntParameterValue() => (int)reverbType;
 	}
 }

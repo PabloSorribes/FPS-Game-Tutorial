@@ -5,7 +5,7 @@ namespace Sonigon
 
 	[System.Serializable]
 	[CreateAssetMenu(fileName = "SoundReflection_", menuName = "Sonigon/SoundReflection", order = 5)]
-	public class SoundReflectionData : ScriptableObject, ISoundDataParameter
+	public class SoundReflectionData : ScriptableObject, ISoundDataParameterInt
 	{
 		public enum SoundReflectionType
 		{
@@ -25,7 +25,7 @@ namespace Sonigon
 		[SerializeField]
 		private SoundReflectionType soundReflectionType;
 
-		public int GetParameterValue()
+		public int GetIntParameterValue()
 		{
 			return (int)soundReflectionType;
 		}

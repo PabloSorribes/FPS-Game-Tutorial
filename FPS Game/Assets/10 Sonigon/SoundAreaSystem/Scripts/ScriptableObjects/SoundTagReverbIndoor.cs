@@ -18,7 +18,7 @@ namespace Sonigon
 
 		public ReverbZone_Inside reverbType;
 
-		public override int GetParameterValue() => (int)reverbType;
+		public override int GetIntParameterValue() => (int)reverbType;
 
 	}
 }

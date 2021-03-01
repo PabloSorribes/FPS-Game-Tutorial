@@ -63,7 +63,7 @@ namespace Sonigon
 			else
 			{
 				isIndoor = true;
-				currentIndoorParameterValue = currentTriggerZones_Indoor[currentTriggerZones_Indoor.Count - 1].GetParameterValue();
+				currentIndoorParameterValue = currentTriggerZones_Indoor[currentTriggerZones_Indoor.Count - 1].GetIntParameterValue();
 
 				// Set OutDoor to its Default Value when you are inside a building/room/house etc.
 				currentOutdoorParameterValue = 0;
@@ -79,7 +79,7 @@ namespace Sonigon
 				}
 				else
 				{
-					currentOutdoorParameterValue = currentTriggerZones_Outdoor[currentTriggerZones_Outdoor.Count - 1].GetParameterValue();
+					currentOutdoorParameterValue = currentTriggerZones_Outdoor[currentTriggerZones_Outdoor.Count - 1].GetIntParameterValue();
 				}
 			}
 
