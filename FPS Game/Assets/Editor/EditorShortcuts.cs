@@ -12,4 +12,14 @@ public static class EditorShortcuts
 			EditorApplication.isPlaying = true;
 		}
 	}
+
+	[MenuItem("NoodleGore/OpenGameScene %.", priority = -1000)]
+	public static void OpenGameScene()
+	{
+		if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+		{
+			EditorSceneManager.OpenScene(EditorBuildSettings.scenes[1].path);
+			//EditorApplication.isPlaying = true;
+		}
+	}
 }
