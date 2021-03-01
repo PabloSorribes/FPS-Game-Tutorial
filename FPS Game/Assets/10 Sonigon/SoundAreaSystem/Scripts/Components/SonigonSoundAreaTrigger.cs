@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using Photon.Pun;
+﻿using Photon.Pun;
+using UnityEngine;
 
 namespace Sonigon
 {
@@ -7,6 +7,8 @@ namespace Sonigon
 	{
 		[SerializeField]
 		SoundTagReverbBase reverbTag = null;
+		[SerializeField]
+		SoundTagAmbBase ambienceTag = null;
 
 #if UNITY_EDITOR || UNITY_DEVELOPMENT
 
@@ -15,15 +17,22 @@ namespace Sonigon
 		bool showInGame = false;
 
 		[SerializeField]
+		bool drawDebug = false;
+
+		[SerializeField]
+		[NaughtyAttributes.ShowIf(nameof(drawDebug))]
 		BoxCollider trigger = null;
 
 		[SerializeField]
+		[NaughtyAttributes.ShowIf(nameof(drawDebug))]
 		Color debugColor = Color.cyan;
 
-        [SerializeField]
+		[SerializeField]
+		[NaughtyAttributes.ShowIf(nameof(drawDebug))]
 		Material debugMaterial = null;
 
-        [SerializeField]
+		[SerializeField]
+		[NaughtyAttributes.ShowIf(nameof(drawDebug))]
 		[Range(0, 1)]
 		float debugAlpha = 0.2f;
 #endif
@@ -32,16 +41,16 @@ namespace Sonigon
 		{
 #if UNITY_EDITOR || UNITY_DEVELOPMENT
 			if (showInGame)
-            {
-			    var meshRenderer = gameObject.AddComponent<MeshRenderer>();
-			    meshRenderer.enabled = true;
+			{
+				var meshRenderer = gameObject.AddComponent<MeshRenderer>();
+				meshRenderer.enabled = true;
 
-			    Material material = new Material(debugMaterial);
-			    Color debugColorTemp = new Color(debugColor.r, debugColor.g, debugColor.b, debugAlpha);
+				Material material = new Material(debugMaterial);
+				Color debugColorTemp = new Color(debugColor.r, debugColor.g, debugColor.b, debugAlpha);
 
-			    material.color = debugColorTemp;
-			    meshRenderer.material = material;
-            }
+				material.color = debugColorTemp;
+				meshRenderer.material = material;
+			}
 #endif
 		}
 
@@ -88,6 +97,10 @@ namespace Sonigon
 #if UNITY_EDITOR || UNITY_DEVELOPMENT
 		private void OnDrawGizmos()
 		{
+			if (!drawDebug)
+			{
+				return;
+			}
 			Color debugColorTemp = new Color(debugColor.r, debugColor.g, debugColor.b, debugAlpha);
 			Gizmos.color = debugColorTemp;
 			Gizmos.matrix = transform.localToWorldMatrix;

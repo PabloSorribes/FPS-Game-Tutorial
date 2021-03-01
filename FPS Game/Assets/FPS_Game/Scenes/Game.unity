@@ -812,6 +812,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6787537140238798836, guid: 107ef049be9835f4887a2b95848aa5f7,
         type: 3}
+      propertyPath: drawDebug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787537140238798836, guid: 107ef049be9835f4887a2b95848aa5f7,
+        type: 3}
       propertyPath: showInGame
       value: 1
       objectReference: {fileID: 0}
@@ -5651,6 +5656,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 787634872971224116, guid: 107ef049be9835f4887a2b95848aa5f7,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1900030069672111139, guid: 107ef049be9835f4887a2b95848aa5f7,
         type: 3}
       propertyPath: m_Name
@@ -6343,6 +6353,11 @@ PrefabInstance:
     - target: {fileID: 6787537140238798836, guid: 107ef049be9835f4887a2b95848aa5f7,
         type: 3}
       propertyPath: showInGame
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787537140238798836, guid: 107ef049be9835f4887a2b95848aa5f7,
+        type: 3}
+      propertyPath: drawDebug
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9037154157903115965, guid: 107ef049be9835f4887a2b95848aa5f7,
@@ -7925,6 +7940,11 @@ PrefabInstance:
     - target: {fileID: 6787537140238798836, guid: 107ef049be9835f4887a2b95848aa5f7,
         type: 3}
       propertyPath: showInGame
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787537140238798836, guid: 107ef049be9835f4887a2b95848aa5f7,
+        type: 3}
+      propertyPath: drawDebug
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9037154157903115965, guid: 107ef049be9835f4887a2b95848aa5f7,
