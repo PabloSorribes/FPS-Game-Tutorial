@@ -14,18 +14,23 @@ namespace Sonigon
 		[SerializeField]
 		BoxCollider trigger = null;
 
-		//[SerializeField]
-		//PhotonView photonView = null;
 
-		#region Debug
-		[Header("--- DEBUG ---")]
+        //[SerializeField]
+        //PhotonView photonView = null;
+
+        #region Debug
+        [Header("--- DEBUG ---")]
 		[SerializeField]
 		Color debugColor = Color.cyan;
 
-		[SerializeField]
+
+        [SerializeField]
 		Material debugMaterial = null;
 
-		[SerializeField]
+        [SerializeField]
+        bool showInGame = false;
+
+        [SerializeField]
 		[Range(0, 1)]
 		float debugAlpha = 0.2f;
 		#endregion Debug
@@ -43,14 +48,17 @@ namespace Sonigon
 
 		private void Start()
 		{
-			var meshRenderer = gameObject.AddComponent<MeshRenderer>();
-			meshRenderer.enabled = true;
+            if(showInGame)
+            {
+			    var meshRenderer = gameObject.AddComponent<MeshRenderer>();
+			    meshRenderer.enabled = true;
 
-			Material material = new Material(debugMaterial);
-			Color debugColorTemp = new Color(debugColor.r, debugColor.g, debugColor.b, debugAlpha);
+			    Material material = new Material(debugMaterial);
+			    Color debugColorTemp = new Color(debugColor.r, debugColor.g, debugColor.b, debugAlpha);
 
-			material.color = debugColorTemp;
-			meshRenderer.material = material;
+			    material.color = debugColorTemp;
+			    meshRenderer.material = material;
+            }
 		}
 
 		private void OnTriggerEnter(Collider other)
